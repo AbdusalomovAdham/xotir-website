@@ -1,0 +1,106 @@
+.footer {
+    width: 100%;
+    height: 167xpx;
+    background: #663722;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+    padding-top: 40px;
+
+    .footer-main {
+        width: 1360px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        border-bottom: 1px solid rgb(225, 225, 225, 0.15);
+        width: 1360;
+        margin-bottom: 20px;
+
+        .footer-left {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-right: 90px;
+
+            .footer-logo {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                gap: 8px;
+
+                .footer-logo-text {
+                    font-weight: 400;
+                    font-size: 28px;
+                    line-height: 120%;
+                    width: 158px;
+                    color: white;
+                }
+            }
+
+            .footer-menu {
+                width: 70%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: row;
+
+                .footer-menu-rigth {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    li a {
+                        color: white;
+                        font-weight: 400;
+                        font-size: 18px;
+                    }
+                }
+
+                .footer-menu-left {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    li a {
+                        color: white;
+                        font-weight: 400;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        .footer-right ul {
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            gap: 8px;
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: white;
+                font-weight: 400;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .footer-bottom {
+        width: 1360px;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            font-weight: 400;
+            font-size: 18px;
+            color: white;
+        }
+    }
+}

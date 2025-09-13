@@ -1,0 +1,25 @@
+.pricing {
+    width: 100%;
+    height: auto;
+    margin-top: 190px;
+    margin-bottom: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .pricing-title h1 {
+        color: #020A16;
+        font-weight: 600;
+        font-size: 36px;
+        margin-bottom: 16px;
+    }
+
+    .pricing-cards {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 20px;
+    }
+}

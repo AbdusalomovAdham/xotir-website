@@ -1,0 +1,19 @@
+.make-qr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #EDE1DC;
+    border-radius: 12px;
+    width: 221px;
+    cursor: pointer;
+    height: 52px;
+
+    span {
+        color: #663722;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+
+}

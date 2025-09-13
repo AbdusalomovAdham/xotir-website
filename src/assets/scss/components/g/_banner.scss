@@ -1,0 +1,83 @@
+.banner-section {
+    width: 100%;
+    height: 750px;
+    position: relative;
+
+    .banner-section-img {
+        width: 100%;
+        height: 750px;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 120%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        &::after {
+            content: "";
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(2, 10, 22, 0) 60%, rgba(2, 10, 22, 0.5) 90%), ;
+        }
+    }
+
+    .banner-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        bottom: -25px;
+        color: white;
+        z-index: 10000;
+        left: 50%;
+        transform: translate(-50%, 0);
+        gap: 8px;
+        .banner-heading h1 {
+            font-weight: 600;
+            font-size: 40px;
+            text-align: center;
+            line-height: 110%;
+        }
+
+        .banner-paragraph p {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 120%;
+            text-align: center;
+        }
+
+        .banner-make-qr {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            background: #663722;
+            color: white;
+            border: 1px solid border linear-gradient(99.29deg, #C78F76 35.95%, #92573D 64.05%);
+            border: 1px solid transparent;
+            border-radius: 12px;
+            background:
+                linear-gradient(#663722, #663722) padding-box,
+                linear-gradient(99.29deg, #C78F76 35.95%, #92573D 64.05%) border-box;
+            padding: 13px 16px;
+            gap: 8px;
+            border-radius: 12px;
+            box-shadow: 0px 20px 40px 0px #66372266;
+
+            span {
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 100%;
+            }
+        }
+
+    }
+
+
+}

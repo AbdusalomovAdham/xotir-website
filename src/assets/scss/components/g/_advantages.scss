@@ -1,0 +1,28 @@
+.advantages {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 280px;
+    height: 670px;
+    position: relative;
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .advantage-title h1 {
+        font-weight: 600;
+        color: #020A16;
+        font-size: 36px;
+        margin-bottom: 14px;
+    }
+
+    .advantages-cards {
+        display: flex;
+        gap: 20px;
+    }
+}

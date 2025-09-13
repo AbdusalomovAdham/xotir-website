@@ -1,0 +1,49 @@
+.header {
+    max-width: 1640px;
+    min-width: 1640px;
+    height: 112px;
+
+    .header-main {
+        width: 100%;
+        padding: 16px 140px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+
+        .header-left {
+            display: flex;
+            flex-direction: row;
+            gap: 60px;
+
+            .header-logo {
+                width: 240px;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                gap: 12px;
+                cursor: pointer;
+
+                .logo-wrapper {
+                    width: 70px;
+                    height: 80px;
+                }
+
+                span {
+                    font-weight: 400;
+                    font-size: 28px;
+                    font-weight: 120%;
+                    color: #020A16;
+                }
+
+            }
+        }
+
+        .header-action {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-direction: row;
+        }
+    }
+}

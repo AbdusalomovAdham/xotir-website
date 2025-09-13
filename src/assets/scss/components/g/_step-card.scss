@@ -1,0 +1,80 @@
+.step-card {
+    width: 400px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #F8EEE9;
+    border-radius: 16px;
+    position: relative;
+    justify-content: flex-end;
+
+    .step-number-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        gap: 24px;
+        position: absolute;
+        left: 0;
+        top: -120px;
+        background-image: conic-gradient(transparent 0deg 90deg,
+                #EDD8CE 90deg 270deg,
+                transparent 270deg 360deg);
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        .step-number-main {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            font-size: 28px;
+            font-weight: 600;
+            color: white;
+            border-radius: 50%;
+            border: 1px dashed #663722;
+            margin-top: 40px;
+
+            .step-number {
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #663722;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .card-text {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        top: 132px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 360px;
+
+        .card-title h1 {
+            font-weight: 600;
+            font-size: 24px;
+            text-align: center;
+            color: #020A16;
+        }
+
+        .card-paragraph p {
+            text-align: center;
+            font-weight: 400;
+            font-size: 18px;
+            color: #020A16;
+        }
+    }
+}
