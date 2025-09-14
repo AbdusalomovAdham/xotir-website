@@ -13,4 +13,4 @@ ul {
 }
 
 
-@import './components/main.scss'
+@import './mixins/main.scss', './components/main.scss', './layouts/main.scss'

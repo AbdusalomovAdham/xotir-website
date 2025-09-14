@@ -13,8 +13,5 @@ import Footer from '@/components/layouts/Footer.vue'
 </script>
 
 <style scoped>
-.home-layout {
-    max-width: 1920px;
-    min-width: 1920px;
-}
+
 </style>

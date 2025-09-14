@@ -27,6 +27,7 @@ onMounted(() => {
                 center: [41.318832, 69.243409],
                 zoom: 14,
                 controls: []
+
             });
 
             markers.forEach(marker => {
@@ -44,6 +45,7 @@ onMounted(() => {
                     }
                 );
                 map.geoObjects.add(placemark);
+                map.behaviors.disable('scrollZoom')
             });
         });
     }

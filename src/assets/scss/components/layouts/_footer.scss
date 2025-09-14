@@ -13,11 +13,12 @@
         width: 1360px;
         height: 100%;
         display: flex;
-        align-items: center;
+        align-items: start;
         flex-direction: row;
         border-bottom: 1px solid rgb(225, 225, 225, 0.15);
-        width: 1360;
+        width: 1360px;
         margin-bottom: 20px;
+        padding-bottom: 25px;
 
         .footer-left {
             width: 70%;
@@ -75,7 +76,7 @@
             }
         }
 
-        .footer-right ul {
+        .footer-right .footer-contacts {
             display: flex;
             align-items: start;
             flex-direction: column;
@@ -90,6 +91,7 @@
                 font-size: 18px;
             }
         }
+
     }
 
     .footer-bottom {
