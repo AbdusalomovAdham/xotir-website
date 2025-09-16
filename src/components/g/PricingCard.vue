@@ -15,18 +15,19 @@
         </div>
         <div class="pricing-card-features">
             <div class="card-feature" v-for="(feature, idx) in $props.features" :key="idx">
-                <div >
+                <div>
                     <IconCheck />
                 </div>
                 <p>{{ feature }}</p>
             </div>
         </div>
-        <button class="choose-btn">Выбрать тариф</button>
+        <Button class="choose-btn">Выбрать тариф</Button>
     </div>
 </template>
 
 <script setup>
 import { defineProps } from 'vue'
+import Button from '@/components/g/Button.vue'
 import IconCheck from '@/components/icon/Check.vue'
 const $props = defineProps({
     price: {

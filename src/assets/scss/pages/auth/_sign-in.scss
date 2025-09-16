@@ -1,0 +1,146 @@
+.sign-in {
+    height: calc(100vh - 112px);
+    width: 100%;
+    background: #F3F6FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-wrapper {
+        height: 524px;
+        width: 555px;
+        border: none;
+        border-radius: 12px;
+        background: white;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        .sign-in-title {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            h1 {
+                color: #020A16;
+                font-weight: 600;
+                font-size: 24px;
+            }
+
+            span {
+                font-weight: 400;
+                font-size: 18px;
+                color: #020A16;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .sign-in-btns {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                width: 100%;
+
+                .sign-in-btn,
+                .sign-up-btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 13px 16px;
+                    box-sizing: border-box;
+                    border-radius: 16px;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 20px;
+                    font-weight: 500;
+                    height: 52px;
+                    box-sizing: border-box;
+                }
+
+                .sign-up-btn {
+                    display: flex;
+                    gap: 5px;
+
+                    span {
+                        color: #663722;
+                    }
+                }
+
+                .sign-in-btn {
+                    background: #663722;
+                    color: white;
+                }
+            }
+        }
+
+        .divider {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 500;
+            color: #020A16;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 227.5px;
+                height: 1px;
+                background-color: 228.5px;
+                background-color: #DFE4EA;
+                top: 50%;
+                left: 5px;
+                transform: translate(0, -50%);
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 227.5px;
+                height: 1px;
+                background-color: 228.5px;
+                background-color: #DFE4EA;
+                top: 50%;
+                right: 5px;
+                transform: translate(0, -50%);
+            }
+        }
+
+        .sign-in-social {
+            display: flex;
+            gap: 12px;
+
+            .social-apple,
+            .social-google {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                padding: 10px 73px;
+                border: none;
+                border-radius: 12px;
+                background: white;
+                border: 1px solid #DFE4EA;
+                width: 252px;
+                font-weight: 500;
+                font-size: 20px;
+                color: #020A16;
+                cursor: pointer;
+            }
+
+            img {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+}

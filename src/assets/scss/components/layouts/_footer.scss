@@ -17,16 +17,16 @@
         flex-direction: row;
         border-bottom: 1px solid rgb(225, 225, 225, 0.15);
         width: 1360px;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
         padding-bottom: 25px;
 
         .footer-left {
-            width: 70%;
+            // width: 70%;
+            margin-right: 257px;
             display: flex;
             align-items: center;
             flex-direction: row;
-            justify-content: space-between;
-            margin-right: 90px;
+            gap: 105px;
 
             .footer-logo {
                 display: flex;
@@ -46,7 +46,7 @@
             .footer-menu {
                 width: 70%;
                 display: flex;
-                justify-content: space-around;
+                gap: 189px;
                 align-items: center;
                 flex-direction: row;
 
@@ -80,7 +80,7 @@
             display: flex;
             align-items: start;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
 
             li {
                 display: flex;

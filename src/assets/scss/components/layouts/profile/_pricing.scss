@@ -1,0 +1,19 @@
+.profile-pricing {
+    &-main {
+        width: 1016px;
+        min-height: 450px;
+        height: max-content;
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-sizing: border-box;
+
+        .profile-pricing-title {
+            h3 {
+                font-weight: 600;
+                font-size: 24px;
+                color: #020A16;
+            }
+        }
+    }
+}

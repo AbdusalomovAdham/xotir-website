@@ -14,7 +14,7 @@
 
             <div class="header-action">
                 <ChooseLang />
-                <MakeQr />
+                <MakeQr @click="makeQr" />
             </div>
 
         </div>
@@ -26,4 +26,9 @@ import NavPanel from '@/components/g/NavPanel.vue'
 import ChooseLang from '@/components/g/ChooseLang.vue'
 import MakeQr from '@/components/g/MakeQr.vue'
 import LogoIcon from '@/components/icon/Logo.vue'
+import router from '@/routes';
+
+const makeQr = () => {
+    router.push('/auth/sign-in')
+}
 </script>

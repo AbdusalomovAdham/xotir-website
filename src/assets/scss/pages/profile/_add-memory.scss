@@ -1,0 +1,227 @@
+.add-memory {
+    flex: 1;
+    background-color: #F3F6FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 60px 0;
+
+    &-main {
+        .add-memory-header {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+
+            h3 {
+                font-weight: 600;
+                font-size: 24px;
+                color: #020A16;
+                text-align: start;
+            }
+
+            svg {
+                cursor: pointer;
+            }
+        }
+
+        .add-memory-content {
+            width: 1130px;
+            min-height: max-content;
+            min-height: 762px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .memory-top {
+                display: flex;
+                gap: 16px;
+
+                .memory-avatar {
+                    width: 168px;
+                    height: 168px;
+                    position: relative;
+
+                    .choose-avatar {
+                        position: absolute;
+                        top: 137px;
+                        left: 64px;
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                        background: white;
+                        border-radius: 50%;
+                        border: 1px solid transparent;
+                        background:
+                            linear-gradient(#fff, #fff) padding-box,
+                            linear-gradient(99.29deg, #C78F76 35.95%, #92573D 64.05%) border-box;
+
+                        input {
+                            position: absolute;
+                            opacity: 0;
+                            height: 40px;
+                            width: 40px;
+                            cursor: pointer;
+                            color: #020A16;
+                        }
+                    }
+
+                    img {
+                        width: 168px;
+                        height: 168px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                }
+
+                .memory-info {
+                    flex: 1;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-auto-rows: min-content;
+                    gap: 16px 19px;
+
+                    // input[type="date"]::-webkit-datetime-edit {
+                    //     display: none;
+                    // }
+                }
+            }
+
+            .memory-bio {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+
+                label {
+                    font-weight: 500;
+                    font-size: 18px;
+                    color: #020A16;
+
+                }
+
+                textarea {
+                    min-height: 104px;
+                    border: 1px solid #8F9BA1;
+                    color: #020A16;
+                    border-radius: 8px;
+                    padding: 13px 14px;
+                    resize: vertical;
+                    outline: none;
+                    font-weight: 500;
+                    font-size: 20px;
+                    box-sizing: border-box;
+                }
+            }
+
+            .memory-extra {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+                margin-bottom: 4px;
+            }
+
+            .memory-gallery {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                h4 {
+                    font-weight: 600;
+                    font-size: 24px;
+                    color: #663722;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        height: 1px;
+                        width: 980px;
+                        background: #DFE4EA;
+                        bottom: 50%;
+                        right: 0;
+                    }
+                }
+
+                .gallery-list {
+                    display: flex;
+                    gap: 16px;
+                    flex-wrap: wrap;
+
+                    .gallery-add {
+                        width: 168px;
+                        height: 168px;
+                        border-radius: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 6px;
+                        cursor: pointer;
+                        position: relative;
+
+                        input {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .gallery-item {
+                        position: relative;
+                        width: 169px;
+                        height: 169px;
+
+                        img {
+                            width: 169px;
+                            height: 169px;
+                            border-radius: 12px;
+                            object-fit: cover;
+                        }
+
+                        button {
+                            position: absolute;
+                            top: 134px;
+                            left: 134px;
+                            background: rgba(0, 0, 0, 0.5);
+                            color: white;
+                            border: none;
+                            border-radius: 50%;
+                            width: 24px;
+                            height: 24px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .memory-actions {
+                display: flex;
+                justify-content: flex-start;
+
+                .save-btn {
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 8px;
+                    width: 137px;
+                    height: 52px;
+                    background-color: #663722;
+                    color: white;
+                    font-weight: 500;
+                    font-size: 20px;
+                    cursor: pointer;
+                    transition: 0.2s;
+                }
+            }
+        }
+    }
+}

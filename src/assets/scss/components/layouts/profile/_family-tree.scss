@@ -1,0 +1,163 @@
+.family-tree {
+    .family-tree-main {
+        width: 1016px;
+        height: max-content;
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+
+        .family-tree-title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            h3 {
+                font-weight: 600;
+                font-size: 24px;
+                color: #020A16;
+            }
+
+            div {
+                display: flex;
+                flex-direction: row;
+                color: #663722;
+                font-weight: 500;
+                font-size: 20px;
+                gap: 8px;
+                cursor: pointer;
+            }
+
+        }
+
+        .family-tree-body {
+            // flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .tree-body-content {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                img {
+                    width: 140px;
+                    height: 140px;
+                    object-fit: cover;
+                    margin-bottom: 8px;
+                }
+
+                h3 {
+                    font-weight: 600;
+                    font-size: 20px;
+                    color: #020A16;
+                    margin-bottom: 4px;
+                }
+
+                p {
+                    font-weight: 500;
+                    font-size: 18px;
+                    color: #647076;
+                    margin-bottom: 16px;
+                }
+
+                .tree-body-add-btn {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    height: 52px;
+                    width: 158px;
+                    color: #FFFFFF;
+                    font-weight: 500;
+                    font-size: 20px;
+                    border: none;
+                    border-radius: 12px;
+                    gap: 10px;
+                    background: #663722;
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+
+
+    &-members {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 16px;
+
+        .member-card {
+            width: 500px;
+            height: 150px;
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            box-sizing: border-box;
+
+            .member-card-header {
+                display: flex;
+                align-items: start;
+                justify-content: space-between;
+
+                .member-card-header-avatar {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 12px;
+                    align-items: center;
+
+                    img {
+                        width: 58px;
+                        height: 58px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                    }
+
+                    .member-card-header-title {
+                        h3 {
+                            font-weight: 600;
+                            font-size: 20px;
+                            color: #020A16;
+                            margin-bottom: 4px;
+                        }
+
+                        p {
+                            font-weight: 400;
+                            font-size: 16px;
+                            color: #663722;
+                        }
+                    }
+                }
+            }
+
+            .member-card-body {
+                display: flex;
+                flex-direction: column;
+                margin-top: 16px;
+
+                span {
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #020A16;
+                    margin-bottom: 8px;
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #020A16;
+                }
+            }
+        }
+
+    }
+}

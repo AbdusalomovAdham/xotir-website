@@ -15,7 +15,7 @@
                 <p>Сделайте воспоминания доступными для будущих поко поколений.</p>
             </div>
 
-            <div class="banner-make-qr">
+            <div class="banner-make-qr" @click="makeQr()">
                 <IconQrDefault />
                 <span>Создать страницу памяти</span>
             </div>
@@ -26,4 +26,9 @@
 
 <script setup>
 import IconQrDefault from '@/components/icon/QrDefault.vue'
+import router from '@/routes';
+
+const makeQr = () => {
+    router.push('/auth/sign-in')
+}
 </script>

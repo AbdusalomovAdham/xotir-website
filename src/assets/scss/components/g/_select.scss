@@ -1,0 +1,36 @@
+.select {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+
+    label {
+        font-size: 18px;
+        font-weight: 500;
+        color: #020A16;
+    }
+
+    .select-options {
+        position: relative;
+        width: 100%;
+
+        select {
+            width: 100%;
+            appearance: none;
+            padding: 13px 40px 13px 14px;
+            border: 1px solid #DFE4EA;
+            border-radius: 12px;
+            outline: none;
+            font-weight: 500;
+            font-size: 20px;
+            color: #8F9BA1;
+
+        }
+
+        svg {
+            position: absolute;
+            right: 13px;
+            top: 13px;
+        }
+    }
+
+}
