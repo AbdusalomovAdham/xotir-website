@@ -1,0 +1,82 @@
+.book-memories {
+    .book-memories-main {
+        width: 1016px;
+        height: max-content;
+        min-height: 360px;
+        background: white;
+    }
+
+    .book-memories-title h3 {
+        font-weight: 600;
+        font-size: 24px;
+        color: #020A16;
+    }
+
+    .book-memories-body {
+        width: 100%;
+
+        .book-memories-body-cards {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+
+            .memory-card {
+                width: 480px;
+                min-height: 201px;
+                height: max-content;
+                background: #EFF3F9;
+
+
+                .memory-card-header {
+                    font-weight: 500;
+                    font-size: 17px;
+                    color: rgb(102, 112, 117);
+                    flex-direction: row;
+                    gap: 12px;
+                    border-bottom: 1px solid #CED3DB;
+
+                    a {
+                        color: rgb(96, 57, 38);
+                        text-decoration: underline;
+                    }
+                }
+
+                .memory-card-body {
+                    .card-body-main {
+                        flex-direction: row;
+                        gap: 12px;
+
+                        .card-body-main-avatar img {
+                            width: 50px;
+                            height: 50px;
+                            object-fit: cover;
+                            border-radius: 50%;
+                        }
+
+                        .card-body-main-info {
+                            h3 {
+                                font-weight: 600;
+                                font-size: 20px;
+                                color: #020A16;
+                            }
+
+                            span {
+                                color: #647076;
+                                font-weight: 500;
+                                font-size: 17px;
+                            }
+                        }
+                    }
+
+                    .memory-card-content p {
+                        font-weight: 500;
+                        font-size: 18px;
+                        color: #020A16;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -15,6 +15,18 @@ const routes = [
         path: 'sign-up',
         component: () => import('@/pages/auth/sign-up.vue'),
         name: 'sign-up'
+      },
+      {
+        path: "forgot-password",
+        component: () => import('@/pages/auth/forgot-password.vue')
+      },
+      {
+        path: "email/code",
+        component: () => import('@/pages/auth/email-code.vue')
+      },
+      {
+        path: "reset-password",
+        component: () => import('@/pages/auth/reset-password')
       }
     ]
   },
@@ -54,13 +66,17 @@ const routes = [
             path: "pricing",
             component: () => import("@/components/layouts/profile/Pricing.vue"),
           },
+          {
+            path: "book-memories",
+            component: () => import('@/components/layouts/profile/BookMemowries.vue')
+          }
         ]
       },
       {
         path: "add-memory",
         component: () => import('@/pages/profile/addMemory.vue'),
         name: 'add-memory'
-      }
+      },
     ],
 
   }

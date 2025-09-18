@@ -9,18 +9,66 @@
     padding: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
 
-    &-left {
+    .profile-main-title h3 {
+        font-weight: 600;
+        font-size: 24px;
+        color: #020A16;
+        margin-bottom: 16px;
+    }
 
-        .profile-main-title h3 {
-            font-weight: 600;
-            font-size: 24px;
-            color: #020A16;
-            margin-bottom: 16px;
+    .profile-main-body {
+        flex-direction: row;
+        gap: 17px;
+
+        &-left {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .profile-main-content {
+                position: relative;
+
+                .profile-avatar img {
+                    border-radius: 50%;
+                    width: 149px;
+                    height: 149px;
+                    object-fit: cover;
+                }
+
+                .select-image {
+                    position: absolute;
+                    transform: translate(-50%, 0);
+                    bottom: 0px;
+                    left: 50%;
+                    bottom: -10px;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid transparent;
+                    background:
+                        linear-gradient(#fff, #fff) padding-box,
+                        linear-gradient(99.29deg, #C78F76 35.95%, #92573D 64.05%) border-box;
+                    background-color: white;
+                    border-radius: 50%;
+
+                    overflow: hidden;
+
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                        height: 40px;
+                        cursor: pointer;
+                    }
+
+                }
+            }
         }
 
-        .profile-main-body {
+        &-right {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(3, 1fr);
@@ -66,69 +114,22 @@
                 }
             }
         }
-
-
-        .profile-edit-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-            gap: 10px;
-            border: none;
-            width: 208px;
-            height: 52px;
-            border-radius: 12px;
-            background: #663722;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 20px;
-            color: white;
-        }
     }
 
-    &-right {
+    .profile-edit-btn {
         display: flex;
         align-items: center;
         justify-content: center;
-
-        .profile-main-content {
-            position: relative;
-
-            .profile-avatar img {
-                border-radius: 50%;
-                width: 149px;
-                height: 149px;
-                object-fit: cover;
-            }
-
-            .select-image {
-                position: absolute;
-                transform: translate(-50%, 0);
-                bottom: 0px;
-                left: 50%;
-                bottom: -10px;
-                width: 40px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 1px solid transparent;
-                background:
-                    linear-gradient(#fff, #fff) padding-box,
-                    linear-gradient(99.29deg, #C78F76 35.95%, #92573D 64.05%) border-box;
-                background-color: white;
-                border-radius: 50%;
-
-                overflow: hidden;
-
-                input {
-                    position: absolute;
-                    opacity: 0;
-                    height: 40px;
-                    cursor: pointer;
-                }
-
-            }
-        }
+        flex-direction: row;
+        gap: 10px;
+        border: none;
+        width: 208px;
+        height: 52px;
+        border-radius: 12px;
+        background: #663722;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 20px;
+        color: white;
     }
 }

@@ -19,10 +19,10 @@
                     </div>
 
                     <div class="memory-info">
-                        <Input :label="'Имя и фамилия:'" :placeholder="'Введите'" type="text" />
+                        <Input :label="'Имя и фамилия:'"  type="text" />
                         <Input :label="'Член семьи:'" :placeholder="'Выбрать'" type="text" :rightIcon="IconDown" />
                         <Input :label="'Дата рождения:'" :placeholder="'Выбрать'" type="text" :rightIcon="Calendar" />
-                        <Input :label="'Место рождения:'" :placeholder="'Введите'" type="text" />
+                        <Input :label="'Место рождения:'"  type="text" />
                     </div>
                 </div>
 
@@ -33,9 +33,9 @@
                 </div>
 
                 <div class="memory-extra">
-                    <Input :label="'Адрес смерти:'" :placeholder="'Введите'" type="text" />
+                    <Input :label="'Адрес смерти:'"  type="text" />
                     <Input :label="'Дата смерти:'" :placeholder="'Выбрать'" type="text" :rightIcon="Calendar" />
-                    <Input :label="'Причина смерти:'" :placeholder="'Введите'" type="text" />
+                    <Input :label="'Причина смерти:'"  type="text" />
                 </div>
 
                 <div class="memory-gallery">

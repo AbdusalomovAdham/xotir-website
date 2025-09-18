@@ -1,0 +1,69 @@
+.otp-container {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: rgba(2, 10, 22, 0.6);
+    top: 0;
+    left: 0;
+    color: #020A16;
+
+    &-wrapper {
+        flex-direction: column;
+        padding: 20px;
+        width: 555px;
+        height: 298px;
+        background: #fff;
+        position: absolute;
+        top: 232px;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        .otp-container-title {
+            h2 {
+                font-weight: 600;
+                font-size: 24px;
+            }
+
+            svg {
+                cursor: pointer;
+            }
+
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        .otp-inputs {
+            gap: 10px;
+
+            .otp-box {
+                width: 52px;
+                height: 52px;
+                text-align: center;
+                font-size: 22px;
+                border: 1px solid #DFE4EA;
+                border-radius: 8px;
+
+                &::placeholder {
+                    color: #DFE4EA;
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .timer {
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        button {
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+}

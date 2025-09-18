@@ -1,60 +1,61 @@
 <template>
     <div class="profile-main">
-        <div class="profile-main-left">
-            <div class="profile-main-title">
-                <h3>Персональная информация</h3>
+        <div class="profile-main-title">
+            <h3>Персональная информация</h3>
+        </div>
+        <div class="profile-main-body flex">
+            <div class="profile-main-body-left">
+                <div class="profile-main-content">
+                    <div class="profile-avatar">
+                        <img :src="avatarUrl" alt="" v-if="avatarUrl">
+                        <IconUserCircle style="width: 149px; height: 149px;" class="profile-img" v-else />
+                    </div>
+
+                    <div class="select-image">
+                        <IconEditPen class="edit-pen-icon" />
+                        <input type="file" accept="image/*" @change="onFileChange" />
+                    </div>
+                </div>
             </div>
-            <div class="profile-main-body">
+            <div class="profile-main-body-right">
                 <div>
                     <span>Имя и фамилия:</span>
                     <h5 v-if="!isEdit">{{ fullName }}</h5>
-                    <Input v-else v-model="fullName" :placeholder="'Введите'" :type="'text'" />
+                    <Input v-else v-model="fullName" :type="'text'" />
                 </div>
                 <div>
                     <span>Номер телефона:</span>
                     <h5 v-if="!isEdit">{{ phoneNumber }}</h5>
-                    <Input v-else v-model="phoneNumber" :placeholder="'Введите'" :type="'text'" />
+                    <Input v-else v-model="phoneNumber" :type="'text'" />
                 </div>
                 <div>
                     <span>Регион:</span>
                     <h5 v-if="!isEdit">{{ region }}</h5>
-                    <Input v-else v-model="region" :placeholder="'Введите'" :type="'text'" />
+                    <Input v-else v-model="region" :type="'text'" />
                     <!-- <Select /> -->
                 </div>
                 <div>
                     <span>Район/город:</span>
                     <h5 v-if="!isEdit">{{ city }}</h5>
-                    <Input v-else v-model="city" :placeholder="'Введите'" :type="'text'" />
+                    <Input v-else v-model="city" :type="'text'" />
                 </div>
-                <div class="profile-main-body-password">
+                <div class="profile-main-body-right-password">
                     <span>Пароль:</span>
                     <div v-if="!isEdit">
                         <h5 v-if="!isShowPassword">*******</h5>
                         <h5 v-else>{{ password }}</h5>
                         <IconEye @click="showPassword" />
                     </div>
-                    <Input v-else v-model="password" :placeholder="'Введите'" :type="'password'" :rightIcon="IconLock"
+                    <Input v-else v-model="password" :type="'password'" :rightIcon="IconLock"
                         :showPassword="isShowPassword" @showPassword="showPassword" />
                 </div>
             </div>
-            <button class="profile-edit-btn" @click="edit">
-                <IconEditPen />
-                Редактировать
-            </button>
         </div>
-        <div class="profile-main-right">
-            <div class="profile-main-content">
-                <div class="profile-avatar">
-                    <img :src="avatarUrl" alt="" v-if="avatarUrl">
-                    <IconUserCircle style="width: 149px; height: 149px;" class="profile-img" v-else />
-                </div>
 
-                <div class="select-image">
-                    <IconEditPen class="edit-pen-icon" />
-                    <input type="file" accept="image/*" @change="onFileChange" />
-                </div>
-            </div>
-        </div>
+        <button class="profile-edit-btn" @click="edit">
+            <IconEditPen />
+            Редактировать
+        </button>
     </div>
 </template>
 
@@ -64,8 +65,8 @@ import IconEye from '@/components/icon/Eye.vue'
 import IconEditPen from '@/components/icon/EditPen.vue'
 import Input from '@/components/g/Input.vue'
 import IconLock from '@/components/icon/Lock.vue'
-// import Select from '@/components/g/Select.vue'
 import IconUserCircle from '@/components/icon/UserCircle.vue'
+
 
 const isShowPassword = ref(false)
 const isEdit = ref(false)

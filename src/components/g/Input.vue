@@ -22,7 +22,7 @@ const $props = defineProps({
     },
     placeholder: {
         type: String,
-        default: ''
+        default: 'Введите'
     },
     type: {
         type: String,

@@ -6,12 +6,12 @@
             <span>Введите вашу личную информацию</span>
          </div>
          <form @submit.prevent>
-            <Input :placeholder="'Введите'" :label="'Имя и фамилия:'" :rightIcon="IconUser" />
-            <Input :placeholder="'Введите'" :label="'Номер телефона:'" :rightIcon="IconDevice" />
+            <Input :label="'Имя и фамилия:'" :rightIcon="IconUser" />
+            <Input  :label="'Номер телефона:'" :rightIcon="IconDevice" />
             <Select :label="'Регион:'" :options="regions" />
             <Select :label="'Район/город:'" :options="cities" />
-            <Input :placeholder="'Введите'" :label="'Пароль:'" :rightIcon="IconLock" />
-            <Input :placeholder="'Введите'" :label="'Повторно введите пароль:'" :rightIcon="IconLock" />
+            <Input  :label="'Пароль:'" :rightIcon="IconLock" />
+            <Input  :label="'Повторно введите пароль:'" :rightIcon="IconLock" />
             <div class="sign-up-btns">
                <Button class="sign-up-btn" @click="signUp">Зарегистрироваться</Button>
                <Button class="sign-in-btn" @click="signIn">Уже есть аккаунт? <span>Войти</span></Button>
