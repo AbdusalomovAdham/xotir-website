@@ -3,7 +3,7 @@
         <div class="header-main">
 
             <div class="header-left">
-                <div class="header-logo">
+                <div class="header-logo" @click="goTO">
                     <div class="logo-wrapper">
                         <LogoIcon />
                     </div>
@@ -30,5 +30,9 @@ import router from '@/routes';
 
 const makeQr = () => {
     router.push('/auth/sign-in')
+}
+
+const goTO = () => {
+    router.push('/')
 }
 </script>

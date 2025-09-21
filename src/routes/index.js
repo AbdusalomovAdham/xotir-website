@@ -35,51 +35,56 @@ const routes = [
     component: () => import("@/layouts/home.vue"),
     children: [
       {
-        path: "home",
+        path: "",
         component: () => import("@/pages/home.vue"),
         name: "home"
       },
-    ],
-  },
-  {
-    path: "/profile",
-    component: () => import("@/layouts/profile.vue"),
-    name: 'profile',
-    children: [
       {
-        path: "",
-        component: () => import("@/pages/profile/profile.vue"),
+        path: "/profile",
+        component: () => import("@/layouts/profile.vue"),
         children: [
           {
             path: "",
-            component: () => import("@/components/layouts/profile/Profile.vue"),
+            component: () => import("@/pages/profile/profile.vue"),
+            name: 'profile',
+            children: [
+              {
+                path: "",
+                component: () => import("@/components/layouts/profile/Profile.vue"),
+                name: 'profile-main'
+              },
+              {
+                path: "family-tree",
+                component: () => import("@/components/layouts/profile/FamilyTree.vue"),
+                name: 'profile-family-tree'
+              },
+              {
+                path: "gallery",
+                component: () => import("@/components/layouts/profile/Gallery.vue"),
+                name: 'profile-gallery'
+              },
+              {
+                path: "pricing",
+                component: () => import("@/components/layouts/profile/Pricing.vue"),
+                name: 'profile-pricing'
+              },
+              {
+                path: "book-memories",
+                component: () => import('@/components/layouts/profile/BookMemories.vue'),
+                name: "profile-book-memories"
+              }
+            ]
           },
           {
-            path: "family-tree",
-            component: () => import("@/components/layouts/profile/FamilyTree.vue"),
+            path: "add-memory",
+            component: () => import('@/pages/profile/addMemory.vue'),
+            name: 'add-memory'
           },
-          {
-            path: "gallery",
-            component: () => import("@/components/layouts/profile/Gallery.vue"),
-          },
-          {
-            path: "pricing",
-            component: () => import("@/components/layouts/profile/Pricing.vue"),
-          },
-          {
-            path: "book-memories",
-            component: () => import('@/components/layouts/profile/BookMemowries.vue')
-          }
-        ]
-      },
-      {
-        path: "add-memory",
-        component: () => import('@/pages/profile/addMemory.vue'),
-        name: 'add-memory'
-      },
-    ],
+        ],
 
-  }
+      }
+    ],
+  },
 ];
 
 

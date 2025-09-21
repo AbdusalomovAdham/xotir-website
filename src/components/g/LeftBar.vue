@@ -18,13 +18,15 @@
                 </li>
             </ul>
         </div>
+
+        <Logout v-if="logout" @cancel="cancel" />
     </div>
 </template>
 
 
 <script setup>
 import IconUserCircle from '@/components/icon/UserCircle.vue'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import IconUserRounded from '@/components/icon/UserRounded.vue'
 import IconActiveUserRounded from '@/components/icon/ActiveUserRounded.vue'
 import IconCommand from '@/components/icon/Command.vue'
@@ -36,7 +38,10 @@ import IconActiveTicket from '@/components/icon/ActiveTicket.vue'
 import IconLogout from '@/components/icon/Logout.vue'
 import IconMessages from '@/components/icon/Messages.vue'
 import IconActiveMessages from '@/components/icon/ActiveMessages.vue'
+import Logout from '@/components/g/LogoutProfile.vue'
 import router from '@/routes'
+import { useRoute } from 'vue-router'
+const route = useRoute()
 
 const navs = [
     { nav: 'Персональная информация', to: '/profile', activeIcon: IconActiveUserRounded, notActiveIcon: IconUserRounded },
@@ -48,12 +53,28 @@ const navs = [
 ]
 
 const activeIdx = ref(0)
+const logout = ref(false)
 
 const goTo = (path, idx) => {
     activeIdx.value = idx
     router.push(path)
     if (idx === 5) {
         activeIdx.value = 0
+        logout.value = true
     }
 }
+
+const cancel = (v) => {
+    logout.value = v
+}
+watch(
+    () => route.path,
+    (newPath) => {
+        const foundIdx = navs.findIndex((nav) => nav.to === newPath)
+        if (foundIdx !== -1) {
+            activeIdx.value = foundIdx
+        }
+    },
+    { immediate: true }
+)
 </script>

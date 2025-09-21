@@ -1,7 +1,7 @@
 .gallery {
     &-main {
         width: 1016px;
-        min-height: 450px;
+        min-height: 71px;
         height: max-content;
         background: white;
         border-radius: 12px;
@@ -13,7 +13,102 @@
                 font-weight: 600;
                 font-size: 24px;
                 color: #020A16;
+                height: 31px;
+            }
+
+            div {
+                flex-direction: row;
+                gap: 8px;
+                width: 142px;
+                height: 26px;
+                position: relative;
+                overflow: hidden;
+
+                span {
+                    color: #663722;
+                    font-weight: 500;
+                    font-size: 20px;
+                }
+
+                input {
+                    height: 30px;
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .gallery-body {
+            .gallery-body-content {
+                flex-direction: column;
+
+                img {
+                    width: 140px;
+                    height: 140px;
+                    object-fit: cover;
+                }
+
+                h5 {
+                    font-weight: 600;
+                    font-size: 20px;
+                    color: #020A16;
+                    height: 26px;
+                }
+
+                span {
+                    font-weight: 500;
+                    font-size: 18px;
+                    color: #647076;
+                    height: 23px;
+                }
+
+                button {
+                    width: 158px;
+                    gap: 10px;
+                    font-weight: 500;
+                    font-size: 20px;
+                    color: white;
+                    overflow: hidden;
+                    position: relative;
+
+                    input {
+                        opacity: 0;
+                        height: 52px;
+                        cursor: pointer;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                    }
+                }
             }
         }
     }
+
+    .gallery-body-images {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); // har qatorda 5 ta rasm
+        gap: 16px;
+
+        .gallery-item {
+            position: relative;
+
+            img {
+                width: 191px;
+                height: 190px;
+                object-fit: cover;
+                border-radius: 8px; // optional
+            }
+
+            svg {
+                position: absolute;
+                bottom: 8px;
+                right: 8px;
+                cursor: pointer;
+            }
+        }
+    }
+
 }

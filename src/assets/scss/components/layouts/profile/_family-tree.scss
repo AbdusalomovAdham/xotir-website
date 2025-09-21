@@ -103,11 +103,13 @@
             border-radius: 12px;
             padding: 16px;
             box-sizing: border-box;
+            cursor: pointer;
 
             .member-card-header {
                 display: flex;
                 align-items: start;
                 justify-content: space-between;
+                position: relative;
 
                 .member-card-header-avatar {
                     display: flex;
@@ -136,6 +138,16 @@
                             color: #663722;
                         }
                     }
+                }
+
+                svg {
+                    cursor: pointer;
+                }
+
+                .up-panel {
+                    position: absolute;
+                    right: 0;
+                    top: 30px;
                 }
             }
 

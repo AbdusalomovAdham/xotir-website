@@ -1,0 +1,23 @@
+.up-panel {
+    width: 200px;
+    height: 94px;
+    background: white;
+    flex-direction: column;
+    border: 1px solid #DFE4EA;
+
+    .up-panel-edit,
+    .up-panel-delete {
+        gap: 8px;
+        cursor: pointer;
+
+        span {
+            font-weight: 500;
+            font-size: 18px;
+            color: #020A16;
+        }
+    }
+
+    .up-panel-edit {
+        border-bottom: 1px solid #EFF3F9;
+    }
+}

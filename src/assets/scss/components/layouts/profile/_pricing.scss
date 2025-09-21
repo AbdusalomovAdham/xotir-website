@@ -15,5 +15,87 @@
                 color: #020A16;
             }
         }
+
+        .payment-section {
+            width: 976px;
+            height: 124px;
+            background: #F4EDE9;
+
+            &-main {
+                flex-direction: column;
+
+                .pricing-type {
+                    p {
+                        font-weight: 500;
+                        font-size: 18px;
+                        color: #937669;
+                        margin-bottom: 4px;
+                    }
+
+                    h5 {
+                        font-weight: 600;
+                        font-size: 24px;
+                        color: #663722;
+                        width: 280px;
+                        height: 31px;
+
+                        span {
+                            font-weight: 500;
+                            font-size: 20px;
+                            color: #663722;
+                        }
+                    }
+                }
+
+                .pricing-type-edit {
+                    gap: 20px;
+
+                    .pricing-type-info,
+                    .pricing-type-change {
+                        gap: 6px;
+
+                        a {
+                            color: #020A16;
+                            text-decoration: underline;
+                        }
+
+                    }
+                }
+            }
+
+            button {
+                width: 161px;
+                font-weight: 500;
+                font-size: 20px;
+                color: white;
+            }
+        }
+
+        .pricing-payments-history {
+            .pricing-payments-history-title {
+                height: 26px;
+                margin-top: 16px;
+                color: #020A16;
+
+                h3 {
+                    font-weight: 600;
+                    font-size: 20px;
+                }
+
+                div {
+                    gap: 4px;
+                    height: 40px;
+                    cursor: pointer;
+
+                    span {
+                        font-weight: 500;
+                        font-size: 18px;
+                        color: #663722;
+                        height: 23px;
+                    }
+                }
+
+            }
+        }
     }
 }

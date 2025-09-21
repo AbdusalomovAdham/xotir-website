@@ -1,0 +1,54 @@
+.payement-history {
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+            flex-direction: row;
+            padding: 0px 12px 6px 12px;
+            width: 976px;
+
+            th {
+                font-weight: 400;
+                font-size: 16px;
+                color: #717F8B;
+                text-align: left;
+                width: 244px;
+                box-sizing: border-box;
+            }
+        }
+
+        tbody {
+            width: 100%;
+            flex-direction: column;
+            gap: 8px;
+
+            tr {
+                width: 976px;
+                padding: 12px;
+                height: 47px;
+                background: #EFF3F9;
+                border-radius: 12px;
+
+                td {
+                    display: flex;
+                    flex-direction: start;
+                    width: 244px;
+                    box-sizing: border-box;
+                    font-weight: 500;
+                    font-size: 18px;
+                    color: #020A16;
+
+                    a {
+                        color: #0B4BAA;
+                        font-weight: 500;
+                        font-size: 18px;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+}

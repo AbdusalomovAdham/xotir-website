@@ -1,0 +1,146 @@
+.gallery-media {
+    gap: 16px;
+    width: 100%;
+
+    .image-add,
+    .video-add,
+    .audio-add {
+        width: 353px;
+        height: 120px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 16px;
+
+        input {
+            position: absolute;
+            width: 352px;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+    }
+
+    .galley-images,
+    .gallery-videos {
+        width: 353px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        height: max-content;
+        max-height: 168px;
+        display: flex;
+        align-items: center;
+
+        .image-item {
+            position: relative;
+            width: 169px;
+
+            img {
+                width: 169px;
+                height: 168px;
+                border-radius: 12px;
+                object-fit: cover;
+            }
+
+            button {
+                position: absolute;
+                top: 134px;
+                left: 134px;
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .video-list {
+        .video-item {
+            width: 169px;
+            height: 168px;
+            position: relative;
+
+            video {
+                width: 169px;
+                height: 168px;
+                object-fit: cover;
+                border-radius: 12px;
+            }
+
+            button {
+                position: absolute;
+                top: 134px;
+                left: 134px;
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+            }
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+        }
+    }
+
+    .audio-list {
+        flex-direction: column;
+
+        .gallery-audios {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .audio-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 353px;
+                height: 48px;
+                padding: 14px;
+                border-radius: 12px;
+                background-color: rgba(255, 255, 255, 1);
+                border: 1px solid rgba(223, 228, 234, 1);
+
+
+                .audio-box {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    svg {
+                        cursor: pointer;
+                    }
+
+                    span {
+                        font-weight: 500;
+                        font-size: 18px;
+                        color: rgba(2, 10, 22, 1);
+                    }
+                }
+
+                button {
+                    height: 28px;
+                    background: none;
+                }
+            }
+        }
+    }
+
+}

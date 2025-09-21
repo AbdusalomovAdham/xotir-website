@@ -1,0 +1,21 @@
+.textarea {
+    flex-direction: column;
+    gap: 4px;
+
+    label {
+        font-weight: 500;
+        font-size: 118px;
+        color: #020A16;
+    }
+
+    textarea {
+        height: 104px;
+        color: #020A16;
+    }
+
+    span {
+        font-weight: 600;
+        font-size: 20px;
+        color: #020A16;
+    }
+}

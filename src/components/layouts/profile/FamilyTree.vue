@@ -14,7 +14,7 @@
                     <h3>Данные недоступны.</h3>
                     <p>Добавьте данные, нажав кнопку Добавить.</p>
                     <button class="tree-body-add-btn" @click="addMemory">
-                        <IconPlus />
+                        <IconCreate />
                         Добавить
                     </button>
                 </div>
@@ -22,20 +22,21 @@
         </div>
 
         <div class="family-tree-members">
-            <div class="member-card" v-for="(member, idx) in memoriyUsers" :key="idx">
+            <div class="member-card" v-for="(member, idx) in memoriyUsers" :key="idx" @click="memberInfo(idx)">
                 <div class="member-card-header">
                     <div class="member-card-header-avatar">
-                        <img :src="member.image" alt="">
+                        <img :src="member.avatar" alt="">
                         <div class="member-card-header-title">
-                            <h3>Нурали Хамидов</h3>
-                            <p>Член семьи: Дедушка</p>
+                            <h3>{{ member.fullName }}</h3>
+                            <p>Член семьи: {{ member.familyMember }}</p>
                         </div>
                     </div>
-                    <IconThreeDot />
+                    <IconThreeDot @click="upPanelActive(idx)" />
+                    <UpPanel v-if="upPanel === idx" class="up-panel" />
                 </div>
                 <div class="member-card-body">
-                    <span>{{ member.about }}</span>
-                    <p>{{ member.bio }}</p>
+                    <span>Дата смерти: {{ member.deathDate }}</span>
+                    <p>Причина смерти: {{ member.deathReason }}</p>
                 </div>
             </div>
         </div>
@@ -44,36 +45,36 @@
 
 <script setup>
 import IconPlus from '@/components/icon/Plus.vue'
+import IconCreate from '@/components/icon/GalleryPlus.vue'
 import router from '@/routes'
 import IconThreeDot from '@/components/icon/ThreeDot.vue'
-import BannerImg from '@/assets/images/banner.png'
+import { computed, ref } from 'vue'
+import UpPanel from '@/components/g/UpPanel.vue'
+import { useFamilyTreeStore } from '@/store/profile/familyaTree'
 
-const memoriyUsers = [
-    // {
-    //     full_name: "Нурали Хамидов",
-    //     coment: 'Член семьи: Дедушка',
-    //     about: 'Дата смерти: 12.01.2023',
-    //     bio: 'Причина смерти: поражение электрическим током',
-    //     image: BannerImg
-    // },
-    // {
-    //     full_name: "Нурали Хамидов",
-    //     coment: 'Член семьи: Дедушка',
-    //     about: 'Дата смерти: 12.01.2023',
-    //     bio: 'Причина смерти: поражение электрическим током',
-    //     image: BannerImg
-    // },
-    // {
-    //     full_name: "Нурали Хамидов",
-    //     coment: 'Член семьи: Дедушка',
-    //     about: 'Дата смерти: 12.01.2023',
-    //     bio: 'Причина смерти: поражение электрическим током',
-    //     image: BannerImg
-    // }
-]
+const upPanel = ref(null)
+const familyTreeStore = useFamilyTreeStore()
+
+const upPanelActive = (idx) => {
+    if (upPanel.value === idx) {
+        upPanel.value = null
+        return
+    }
+    upPanel.value = idx
+}
+
+const memoriyUsers = computed(() => familyTreeStore.memoriyUsers)
+const imgUrls = ref([])
 
 const addMemory = () => {
     router.push('/profile/add-memory')
 }
 
+const memberInfo = (idx) => {
+    router.push('/profile/add-memory')
+
+    familyTreeStore.member = familyTreeStore.memoriyUsers[idx]
+    console.log('familyTreeStore.member', familyTreeStore.member)
+
+}
 </script>
