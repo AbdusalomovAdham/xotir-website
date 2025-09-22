@@ -1,12 +1,11 @@
 <template>
   <div class="add-memory">
     <div class="add-memory-main">
-
       <div class="add-memory-header">
-        <IconLeftBack @click="returnBack"/>
+        <IconLeftBack @click="returnBack" />
         <h3>Добавить память</h3>
       </div>
-      <AddMemoryContent/>
+      <AddMemoryContent />
     </div>
   </div>
 </template>

@@ -1,16 +1,13 @@
 <template>
     <div class="step-card">
         <div class="step-number-wrapper">
-            <div class="step-number-main">
-                <div class="step-number">
-                    {{ $props.stepNumber }}
-                </div>
+            <div class="step-icon">
+                <component :is="stepIcon"></component>
             </div>
             <div class="step-card-icon">
                 <component :is="$props.icon"></component>
             </div>
         </div>
-
         <div class="card-text">
             <div class="card-title">
                 <h1>{{ $props.title }}</h1>
@@ -40,6 +37,10 @@ const $props = defineProps({
         default: ""
     },
     text: {
+        type: String,
+        default: ""
+    },
+    stepIcon: {
         type: String,
         default: ""
     }

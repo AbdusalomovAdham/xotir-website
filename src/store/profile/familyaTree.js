@@ -1,11 +1,12 @@
 import { defineStore } from "pinia";
 import BannerImg from '@/assets/images/banner.png'
-import { ref } from "vue";
+import { reactive, ref } from "vue";
 
 export const useFamilyTreeStore = defineStore('family-tree', () => {
-    const member = ref({})
-    const memoriyUsers = [
+    const member = ref(null)
+    const memoriyUsers = ref([
         {
+            id: 1,
             avatar: BannerImg,
             fullName: "Абдурасул Юсупов",
             familyMember: "Ота",
@@ -22,9 +23,16 @@ export const useFamilyTreeStore = defineStore('family-tree', () => {
             socialLinks: "facebook.com/abdurasul",
             status: true
         },
-    ]
+    ])
+
+    const addMember = () => {
+        console.log('add')
+    }
+
+
     return {
         memoriyUsers,
+        addMember,
         member
     }
 })

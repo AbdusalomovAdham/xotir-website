@@ -1,36 +1,102 @@
 .select {
-    display: flex;
-    gap: 4px;
-    flex-direction: column;
-
     label {
-        font-size: 18px;
         font-weight: 500;
+        font-size: 18px;
         color: #020A16;
     }
 
-    .select-options {
+    .custom-select {
         position: relative;
+        min-width: 155px;
         width: 100%;
+        font-family: inherit;
+        cursor: pointer;
 
-        select {
-            width: 100%;
-            appearance: none;
-            padding: 13px 40px 13px 14px;
+        .selected {
+            background: #fff;
             border: 1px solid #DFE4EA;
             border-radius: 12px;
-            outline: none;
-            font-weight: 500;
+            padding: 12px;
             font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+            height: 52px;
             color: #8F9BA1;
 
+            &.has-value {
+                color: #020A16;
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            .arrow {
+                transition: transform 0.3s ease;
+
+                &.rotate {
+                    transform: rotate(180deg);
+                }
+            }
         }
 
-        svg {
+        .options {
+            margin-top: 6px;
+            background: #fff;
+            border: 1px solid #DFE4EA;
+            border-radius: 12px;
+            list-style: none;
+            padding: 6px 0;
+            max-height: 200px;
+            overflow-y: auto;
             position: absolute;
-            right: 13px;
-            top: 13px;
+            width: 100%;
+            z-index: 10;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            li {
+                color: #020a16;
+                padding: 10px 14px;
+                transition: background 0.2s ease;
+                font-size: 20px;
+                font-weight: 400;
+
+                &.active {
+                    color: #020a16;
+                    font-weight: 500;
+                }
+
+                border-bottom: 1px solid #DFE4EA;
+
+                &:hover {
+                    background: rgb(242, 242, 242);
+                }
+
+                img {
+                    width: 24px;
+                    height: 20px;
+                    border-radius: 4px;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .error {
+            border: 1px solid red;
         }
     }
+
+    .select-error {
+        color: red;
+        font-size: 14px;
+        margin-top: 4px;
+        display: block;
+    }
+
 
 }

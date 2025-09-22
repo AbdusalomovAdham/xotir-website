@@ -1,28 +1,31 @@
 <template>
     <div class="textarea flex">
-        <label v-if="$props.label" :class="{ 'info': $props.info }">
+        <label v-if="label" :class="{ 'info': info }">
             {{ label }}
         </label>
-        <textarea cols="30" rows="10" :placeholder="$props.placeholder" v-if="!info"></textarea>
-        <span v-if="info">{{ $props.info }}</span>
+        <textarea cols="30" rows="10" :placeholder="placeholder" v-if="!info" v-model="modelValue"></textarea>
+        <span v-if="info">{{ info }}</span>
     </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, defineModel } from 'vue'
 
-const $props = defineProps({
+const props = defineProps({
     placeholder: {
         type: String,
         default: 'Введите'
     },
     label: {
         type: String,
-        default: ""
+        default: ''
     },
     info: {
         type: String,
         default: ''
     }
 })
+
+// modelValue bilan parentga bog'lanadi
+const modelValue = defineModel()
 </script>

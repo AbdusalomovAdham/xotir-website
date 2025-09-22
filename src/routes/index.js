@@ -80,6 +80,11 @@ const routes = [
             component: () => import('@/pages/profile/addMemory.vue'),
             name: 'add-memory'
           },
+          {
+            path: "view-memory",
+            component: () => import('@/pages/profile/viewMemory.vue'),
+            name: 'view-memory'
+          },
         ],
 
       }

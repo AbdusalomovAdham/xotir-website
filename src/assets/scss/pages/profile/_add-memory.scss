@@ -86,83 +86,7 @@
           grid-template-columns: repeat(2, 1fr);
           grid-auto-rows: min-content;
           gap: 16px 19px;
-
-          // input[type="date"]::-webkit-datetime-edit {
-          //     display: none;
-          // }
         }
-      }
-
-      .member-info {
-        display: flex;
-        flex-direction: row;
-        width: 906px;
-        justify-content: space-between;
-
-        .member-info-left {
-          display: flex;
-          align-items: flex-start;
-          flex-direction: column;
-          justify-content: center;
-          gap: 16px;
-
-          .member-about {
-            h3 {
-              font-weight: 600;
-              font-size: 26px;
-              color: #020A16;
-            }
-
-            span {
-              font-weight: 400;
-              color: #663722;
-              font-size: 18px;
-            }
-          }
-
-          .member-birth-place {
-            h5 {
-              color: #647076;
-              font-weight: 500;
-              font-size: 18px;
-            }
-
-            span {
-              font-size: 20px;
-              color: #020A16;
-              font-weight: 600;
-            }
-          }
-        }
-
-        .member-info-right {
-          display: flex;
-          flex-direction: column;
-          gap: 44px;
-
-          .member-status {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-          }
-
-          .member-birth-date {
-            width: 445px;
-
-            h5 {
-              font-weight: 500;
-              font-size: 18px;
-              color: #647076;
-            }
-
-            span {
-              font-weight: 600;
-              font-size: 20px;
-              color: #020A16;
-            }
-          }
-        }
-
       }
 
       .memory-bio {
@@ -175,12 +99,6 @@
           font-weight: 500;
           font-size: 18px;
           color: #020A16;
-        }
-
-        label.info {
-          font-size: 18px;
-          font-weight: 500;
-          color: #647076;
         }
 
         textarea {
@@ -198,9 +116,10 @@
       }
 
       .memory-location {
-        display: flex;
+        display: grid;
         flex-direction: row;
         gap: 16px;
+        grid-template-columns: repeat(3, 1fr);
       }
 
       .memory-extra {
@@ -208,36 +127,6 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;
         margin-bottom: 4px;
-      }
-
-      .member-socials {
-        flex-direction: column;
-        gap: 6px;
-
-        span {
-          font-weight: 500;
-          color: #647076;
-          font-size: 18px;
-        }
-
-        .member-socials-link {
-          display: flex;
-          flex-direction: row;
-          gap: 6px;
-
-          a {
-            gap: 6px;
-            min-width: 123px;
-            width: max-content;
-            height: 35px;
-            border-radius: 12px;
-            background: #663722;
-            color: white;
-            font-weight: 500;
-            font-size: 18px;
-          }
-        }
-
       }
 
       .memory-map {
@@ -289,14 +178,6 @@
             font-size: 20px;
             cursor: pointer;
             transition: 0.2s;
-          }
-
-          .edit-btn {
-            width: 208px;
-            font-weight: 500;
-            font-size: 20px;
-            color: #FFFFFF;
-            gap: 10px;
           }
 
           .preview-btn {

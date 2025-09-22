@@ -2,11 +2,10 @@
     <div class="gallery-media flex">
         <div class="image-list">
             <div class="image-add">
-                <IconAddGallery v-if="member" />
-                <input type="file" multiple accept="image/*" @change="addGallery" v-if="member" />
-                <MediaBox :mediaName="'ФОТОГРАФИЮ'" v-if="!member" />
+                <IconAddGallery />
+                <input type="file" multiple accept="image/*" @change="addGallery" />
             </div>
-            <div class="galley-images flex" v-if="!member">
+            <div class="galley-images flex">
                 <div v-for="(img, idx) in images" :key="idx" class="image-item">
                     <img :src="img" />
                     <button @click="removeImage(idx)">
@@ -18,9 +17,8 @@
 
         <div class="video-list">
             <div class="video-add">
-                <IconAddVideo v-if="member" />
-                <input type="file" accept="video/mp4" @change="addVideo" v-if="member">
-                <MediaBox :mediaName="'ВИДЕО '" v-if="!member" />
+                <IconAddVideo />
+                <input type="file" accept="video/mp4" @change="addVideo">
             </div>
             <div class="gallery-videos flex">
                 <div class="video-item" v-for="(video, idx) in videos" :key="idx">
@@ -35,9 +33,8 @@
 
         <div class="audio-list flex">
             <div class="audio-add">
-                <IconAddAudio v-if="member" />
-                <input type="file" accept="audio/mp3" @change="addAudio" v-if="member">
-                <MediaBox :mediaName="'АУДИО'" v-if="!member" />
+                <IconAddAudio />
+                <input type="file" accept="audio/mp3" @change="addAudio">
             </div>
             <div class="gallery-audios">
                 <div class="audio-item" v-for="(audio, idx) in audios" :key="idx">
@@ -68,8 +65,6 @@ import IconPauseAudio from '@/components/icon/PauseAudio.vue'
 import MediaBox from '@/components/g/MediaBox.vue'
 
 import { useFamilyTreeStore } from '@/store/profile/familyaTree'
-
-const member = computed(() => useFamilyTreeStore().member)
 
 const images = ref([])
 const videos = ref([])

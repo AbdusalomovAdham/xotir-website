@@ -27,7 +27,6 @@ import ChooseLang from '@/components/g/ChooseLang.vue'
 import MakeQr from '@/components/g/MakeQr.vue'
 import LogoIcon from '@/components/icon/Logo.vue'
 import router from '@/routes';
-
 const makeQr = () => {
     router.push('/auth/sign-in')
 }

@@ -6,8 +6,11 @@
                 <span>Введите вашу личную информацию</span>
             </div>
             <form @submit.prevent class="flex">
-                <Input :label="'Электронная почта:'" :type="'email'" :rightIcon="IconEmail" class="mb-8" />
-                <Input :label="'Пароль:'" :type="'password'" :rightIcon="IconLock" />
+                <Input :label="'Электронная почта:'" :type="'email'" :rightIcon="IconEmail" class="mb-8" v-model="email"
+                    :isFill="emailError" />
+
+                <Input :label="'Пароль:'" :type="'password'" :rightIcon="IconLock" v-model="password"
+                    :isFill="passwordError" />
                 <div class="sign-in-forgot-password flex content-end">
                     <router-link to="/auth/forgot-password">Забыли пароль</router-link>
                 </div>
@@ -33,6 +36,7 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import Input from '@/components/g/Input.vue'
 import Button from '@/components/g/Button.vue'
 import IconEmail from '@/components/icon/Email.vue'
@@ -41,11 +45,30 @@ import Google from '@/assets/images/google.png'
 import Apple from '@/assets/images/apple.png'
 import router from '@/routes'
 
+const email = ref('')
+const password = ref('')
+
+const emailError = ref(false)
+const passwordError = ref(false)
+
+const isFill = ref(false)
+
 const signUp = () => {
     router.push('/auth/sign-up')
 }
 
 const signIn = () => {
+    emailError.value = !email.value.trim()
+    passwordError.value = !password.value.trim()
+
+    if (emailError.value || passwordError.value) {
+        setTimeout(() => {
+            emailError.value = false
+            passwordError.value = false
+        }, 3000);
+        return
+    }
+
     router.push('/profile')
 }
 </script>ƒ

@@ -3,9 +3,10 @@
         <label v-if="$props.label" :class="{ 'info': $props.info }">{{ $props.label }}</label>
         <div class="input-wrapper">
             <input :type="$props.type" :placeholder="placeholder" :value="$props.modelValue"
-                @input="$emit('update:modelValue', $event.target.value)" v-if="!info">
-            <component :is="rightIcon" v-if="$props.rightIcon && !info" @click="emit"></component>
+                @input="$emit('update:modelValue', $event.target.value)" v-if="!info" :class="{ 'error-line': isFill }">
+            <component :is="rightIcon" v-if="$props.rightIcon && !info"></component>
             <span v-if="$props.info">{{ $props.info }}</span>
+            <small class="error" v-if="isFill">{{ $props.errMsg || 'должен быть заполнен' }} </small>
         </div>
     </div>
 </template>
@@ -40,9 +41,16 @@ const $props = defineProps({
     info: {
         type: String,
         default: ''
+    },
+    isFill: {
+        type: Boolean,
+        default: false
+    },
+    errMsg: {
+        type: String,
+        default: ''
     }
 })
 
 const emit = defineEmits(["update:modelValue", "iconClick"]);
-
 </script>

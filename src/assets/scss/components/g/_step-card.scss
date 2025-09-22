@@ -17,7 +17,7 @@
         width: 240px;
         height: 240px;
         border-radius: 50%;
-        gap: 24px;
+        // gap: 25px;
         position: absolute;
         left: 0;
         top: -120px;
@@ -50,6 +50,10 @@
                 background-color: #663722;
                 border-radius: 50%;
             }
+        }
+
+        .step-icon{
+            margin-top: 50px;
         }
     }
 

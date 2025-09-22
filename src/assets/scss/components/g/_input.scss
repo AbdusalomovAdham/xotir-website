@@ -51,7 +51,14 @@
             font-size: 20px;
             color: #020A16;
         }
+
+        small {
+            color: red;
+            margin-top: 5px;
+        }
+
+        .error-line {
+            border: 1px solid red;
+        }
     }
-
-
 }

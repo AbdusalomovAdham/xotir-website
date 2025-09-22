@@ -1,0 +1,20 @@
+.member-socials {
+    flex-direction: column;
+
+    &-link {
+        flex-direction: row;
+        gap: 6px;
+
+        a {
+            min-width: 120px;
+            width: max-content;
+            height: 35px;
+            border-radius: 10px;
+            background: #663722;
+            gap: 10px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+}

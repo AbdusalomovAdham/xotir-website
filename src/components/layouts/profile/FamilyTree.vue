@@ -25,18 +25,18 @@
             <div class="member-card" v-for="(member, idx) in memoriyUsers" :key="idx" @click="memberInfo(idx)">
                 <div class="member-card-header">
                     <div class="member-card-header-avatar">
-                        <img :src="member.avatar" alt="">
+                        <img :src="member?.avatar" alt="">
                         <div class="member-card-header-title">
-                            <h3>{{ member.fullName }}</h3>
-                            <p>Член семьи: {{ member.familyMember }}</p>
+                            <h3>{{ member?.fullName }}</h3>
+                            <p>Член семьи: {{ member?.familyMember }}</p>
                         </div>
                     </div>
                     <IconThreeDot @click="upPanelActive(idx)" />
                     <UpPanel v-if="upPanel === idx" class="up-panel" />
                 </div>
                 <div class="member-card-body">
-                    <span>Дата смерти: {{ member.deathDate }}</span>
-                    <p>Причина смерти: {{ member.deathReason }}</p>
+                    <span>Дата смерти: {{ member?.deathDate }}</span>
+                    <p>Причина смерти: {{ member?.deathReason }}</p>
                 </div>
             </div>
         </div>
@@ -64,17 +64,13 @@ const upPanelActive = (idx) => {
 }
 
 const memoriyUsers = computed(() => familyTreeStore.memoriyUsers)
-const imgUrls = ref([])
 
 const addMemory = () => {
     router.push('/profile/add-memory')
 }
 
 const memberInfo = (idx) => {
-    router.push('/profile/add-memory')
-
+    router.push('/profile/view-memory')
     familyTreeStore.member = familyTreeStore.memoriyUsers[idx]
-    console.log('familyTreeStore.member', familyTreeStore.member)
-
 }
 </script>
