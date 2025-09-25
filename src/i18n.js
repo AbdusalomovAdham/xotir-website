@@ -6,7 +6,8 @@ const messages = {
             how: "Как это работает?",
             benefits: "Преимущества",
             tariffs: "Тарифы",
-            partners: "Партнеры",
+            userVideos: "Пользовательские видео",
+            trust: 'Нам доверяют',
             faq: "FAQ",
             contacts: "Контакты"
         },
@@ -19,7 +20,8 @@ const messages = {
             how: "How it works?",
             benefits: "Benefits",
             tariffs: "Tariffs",
-            partners: "Partners",
+            userVideos: 'User videos',
+            trus: 'They trust us',
             faq: "FAQ",
             contacts: "Contacts"
         },
@@ -32,7 +34,9 @@ const messages = {
             how: "Bu qanday ishlaydi?",
             benefits: "Afzalliklar",
             tariffs: "Tariflar",
-            partners: "Hamkorlar",
+            userVideos: 'Foydalanuvchi videolari',
+            trus: 'They trust us',
+            partners: "Ular bizga ishonishadi",
             faq: "Savollar",
             contacts: "Aloqa"
         },

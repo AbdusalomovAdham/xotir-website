@@ -18,7 +18,7 @@
                                 <li><a href="#pricing" @click.prevent="scrollToSection('pricing')">Тарифы</a></li>
                             </ul>
                             <ul class="footer-menu-left">
-                                <li><a href="#">Партнеры</a></li>
+                                <li><a href="#user-videos" @click.prevent="scrollToSection('user-videos')">Пользовательские видео</a></li>
                                 <li><a href="#frequently-questions"
                                         @click.prevent="scrollToSection('frequently-questions')">FAQ</a></li>
                                 <li><a href="#footer" @click.prevent="scrollToSection('footer')">Контакты</a></li>

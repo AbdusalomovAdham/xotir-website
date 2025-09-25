@@ -63,14 +63,15 @@ const closeBar = () => {
     store.isClose = false
 }
 
-const navs = ref([
+const navs = [
     { nav: 'nav.how', url: 'how-it-work' },
     { nav: 'nav.benefits', url: 'advantages' },
     { nav: 'nav.tariffs', url: 'pricing' },
-    { nav: 'nav.partners' },
+    { nav: 'nav.userVideos', url: 'user-videos' },
+    // { key: 'nav.trust', url: 'trusted' },
     { nav: 'nav.faq', url: 'frequently-questions' },
     { nav: 'nav.contacts', url: 'footer' }
-])
+]
 
 const scrollToSection = (url) => {
     const section = document.getElementById(url)
@@ -78,7 +79,7 @@ const scrollToSection = (url) => {
         const top = section.offsetTop
         window.scrollTo({
             top,
-            behavior: 'smooth' // browser smooth
+            behavior: 'smooth'
         })
     }
 }

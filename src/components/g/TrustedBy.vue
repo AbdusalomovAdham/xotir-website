@@ -1,5 +1,5 @@
 <template>
-  <section class="trusted-by-section flex center" id="trusted-by-section">
+  <section class="trusted-by-section flex center" id="trusted">
     <div class="container">
       <div class="trusted-by-section_inner">
         <div class="trusted-by-section-main">

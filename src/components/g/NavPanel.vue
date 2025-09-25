@@ -16,7 +16,8 @@ const navItems = [
     { key: 'nav.how', url: 'how-it-work' },
     { key: 'nav.benefits', url: 'advantages' },
     { key: 'nav.tariffs', url: 'pricing' },
-    { key: 'nav.partners' },
+    { key: 'nav.userVideos', url: 'user-videos' },
+    // { key: 'nav.trust', url: 'trusted' },
     { key: 'nav.faq', url: 'frequently-questions' },
     { key: 'nav.contacts', url: 'footer' }
 ]
