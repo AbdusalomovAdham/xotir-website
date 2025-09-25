@@ -1,8 +1,8 @@
 <template>
     <nav class="nav">
         <ul>
-            <li class="nav-item" v-for="item in navItems" :key="item.key">
-                <router-link to="#" class="nav-item-link">{{ t(item.key) }}</router-link>
+            <li class="nav-item" v-for="(item, idx) in navItems" :key="idx" @click.prevent="scrollToSection(item.url)">
+                <a :href="'#' + item.url" class="nav-item-link">{{ t(item.key) }}</a>
             </li>
         </ul>
     </nav>
@@ -11,14 +11,24 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
-
+const { t } = useI18n({ useScope: 'global' })
 const navItems = [
-    { key: 'nav.how' },
-    { key: 'nav.benefits' },
-    { key: 'nav.tariffs' },
+    { key: 'nav.how', url: 'how-it-work' },
+    { key: 'nav.benefits', url: 'advantages' },
+    { key: 'nav.tariffs', url: 'pricing' },
     { key: 'nav.partners' },
-    { key: 'nav.faq' },
-    { key: 'nav.contacts' }
+    { key: 'nav.faq', url: 'frequently-questions' },
+    { key: 'nav.contacts', url: 'footer' }
 ]
+
+const scrollToSection = (id) => {
+    const section = document.getElementById(id)
+    if (section) {
+        const top = section.offsetTop
+        window.scrollTo({
+            top,
+            behavior: 'smooth' // browser smooth
+        })
+    }
+}
 </script>

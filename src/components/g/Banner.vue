@@ -1,5 +1,5 @@
 <template>
-    <section class="banner-section">
+    <section class="banner-section" id="banner">
         <div class="banner-section-img">
             <img src="@/assets/images/banner.png" alt="banner section">
         </div>
@@ -34,4 +34,5 @@ import router from '@/routes';
 const makeQr = () => {
     router.push('/auth/sign-in')
 }
+
 </script>

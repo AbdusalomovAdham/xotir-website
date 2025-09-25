@@ -47,7 +47,7 @@ const $props = defineProps({
         default: false
     },
     icon: {
-        type: String,
+        type: [Object, String],
         default: ""
     },
     title: {

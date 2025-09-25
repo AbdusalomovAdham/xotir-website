@@ -15,16 +15,18 @@
                 </div>
                 <div class="right-bar-navs">
                     <ul class="flex">
-                        <li v-for="(item, idx) in navs" :key="idx" @click="toLink">
-                            <router-link to="#">{{ item.nav }}</router-link>
+                        <li v-for="(item, idx) in navs" :key="idx" @click="toLink"
+                            @click.prevent="scrollToSection(item.url)">
+                            <a :href="`#` + item.nav">{{ t(item.nav) }}</a>
                         </li>
                     </ul>
-                    <div class="right-bar-actions flex">
-                        <MakeQr @click="makeQr" class="qr" />
+                    <div class="rigth-bar-actions">
+                        <MakeQr class="qr" @click="makeQr" />
                         <div class="right-bar-langs flex">
-                            <div class=" right-bar-lang flex center" :class="{ 'active': activeLang === lang.code }"
-                                v-for="(lang, idx) in langs" :key="idx" @click="setLang(lang)">
-                                <router-link to="#" class="flex center">{{ lang.name }}</router-link>
+                            <div class="right-bar-lang flex center"
+                                :class="{ 'active': langStore.activeLang === lang.code }" v-for="(lang, idx) in langs"
+                                :key="idx" @click="() => langStore.setLang(lang.code)">
+                                <span>{{ t(lang.name) }}</span>
                             </div>
                         </div>
                     </div>
@@ -44,7 +46,7 @@ import router from "@/routes"
 import { useI18n } from "vue-i18n"
 import { useLanguageStore } from '@/store/composables/useLanguage'
 
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 const store = menuBarStore()
 const isClose = computed(() => store.isClose)
 const langStore = useLanguageStore()
@@ -53,22 +55,33 @@ const langStore = useLanguageStore()
 const activeLang = computed(() => langStore.activeLang.value || 'ru')
 
 const setLang = (lang) => {
+    langStore.setLang(lang.code)
     activeLang.value = lang.code
-    langStore.setLang(lang)
 }
 
 const closeBar = () => {
     store.isClose = false
 }
 
-const navs = computed(() => [
-    { nav: t('nav.how') },
-    { nav: t('nav.benefits') },
-    { nav: t('nav.tariffs') },
-    { nav: t('nav.partners') },
-    { nav: t('nav.faq') },
-    { nav: t('nav.contacts') }
+const navs = ref([
+    { nav: 'nav.how', url: 'how-it-work' },
+    { nav: 'nav.benefits', url: 'advantages' },
+    { nav: 'nav.tariffs', url: 'pricing' },
+    { nav: 'nav.partners' },
+    { nav: 'nav.faq', url: 'frequently-questions' },
+    { nav: 'nav.contacts', url: 'footer' }
 ])
+
+const scrollToSection = (url) => {
+    const section = document.getElementById(url)
+    if (section) {
+        const top = section.offsetTop
+        window.scrollTo({
+            top,
+            behavior: 'smooth' // browser smooth
+        })
+    }
+}
 
 const langs = ref([
     { code: "ru", name: "Русский" },
@@ -85,7 +98,6 @@ const toLink = (url) => {
     router.push(url || '/auth/sign-in')
     store.isClose = false
 }
-
 
 let startX = 0
 let currentX = 0

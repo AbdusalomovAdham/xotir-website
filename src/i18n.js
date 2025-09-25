@@ -9,6 +9,9 @@ const messages = {
             partners: "Партнеры",
             faq: "FAQ",
             contacts: "Контакты"
+        },
+        qr: {
+            create: 'Создать QR-код'
         }
     },
     en: {
@@ -19,6 +22,9 @@ const messages = {
             partners: "Partners",
             faq: "FAQ",
             contacts: "Contacts"
+        },
+        qr: {
+            create: 'Create a QR code'
         }
     },
     uz: {
@@ -29,7 +35,11 @@ const messages = {
             partners: "Hamkorlar",
             faq: "Savollar",
             contacts: "Aloqa"
+        },
+        qr: {
+            create: 'QR kod yaratish'
         }
+
     }
 }
 

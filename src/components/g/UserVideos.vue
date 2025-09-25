@@ -1,5 +1,5 @@
 <template>
-    <section class="user-videos">
+    <section class="user-videos" id="user-videos">
         <div class="container">
             <div class="user-videos_inner flex center">
                 <div class="user-videos-title">

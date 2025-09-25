@@ -1,5 +1,5 @@
 <template>
-    <section class="pricing">
+    <section class="pricing" id="pricing">
         <div class="pricing-title">
             <h1>Тарифы</h1>
         </div>

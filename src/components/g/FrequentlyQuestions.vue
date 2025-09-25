@@ -1,5 +1,5 @@
 <template>
-    <section class="frequently-questions">
+    <section class="frequently-questions" id="frequently-questions">
         <div class="container">
             <div class="frequently-questions-main">
                 <div class="frequently-questions-title">

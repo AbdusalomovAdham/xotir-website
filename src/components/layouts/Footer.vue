@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="footer-item">
                 <div class="footer-main">
@@ -11,14 +11,17 @@
 
                         <div class="footer-menu">
                             <ul class="footer-menu-rigth">
-                                <li><a href="#">Как это работает?</a></li>
-                                <li><a href="#">Преимущества</a></li>
-                                <li><a href="#">Тарифы</a></li>
+                                <li><a href="#how-it-work" @click.prevent="scrollToSection('how-it-work')">Как это
+                                        работает?</a></li>
+                                <li><a href="#advantages"
+                                        @click.prevent="scrollToSection('advantages')">Преимущества</a></li>
+                                <li><a href="#pricing" @click.prevent="scrollToSection('pricing')">Тарифы</a></li>
                             </ul>
                             <ul class="footer-menu-left">
                                 <li><a href="#">Партнеры</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Контакты</a></li>
+                                <li><a href="#frequently-questions"
+                                        @click.prevent="scrollToSection('frequently-questions')">FAQ</a></li>
+                                <li><a href="#footer" @click.prevent="scrollToSection('footer')">Контакты</a></li>
                             </ul>
                         </div>
 
@@ -54,4 +57,15 @@
 import Logo from '@/components/icon/Logo.vue'
 import CallingPhone from '@/components/icon/CallingPhone.vue'
 import Message from '@/components/icon/Message.vue'
+
+const scrollToSection = (url) => {
+    const section = document.getElementById(url)
+    if (section) {
+        const top = section.offsetTop
+        window.scrollTo({
+            top,
+            behavior: 'smooth' // browser smooth
+        })
+    }
+}
 </script>

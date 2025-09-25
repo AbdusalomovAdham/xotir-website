@@ -1,5 +1,5 @@
 <template>
-  <main class="home-page">
+  <main class="home-page" id="home-page">
     <BannerSection />
     <WorkSteps />
     <Advantages />
@@ -40,3 +40,13 @@ const markers = [
 ]
 const center = [41.318832, 69.243409]
 </script>
+
+<script setup>
+
+</script>
+
+<style scoped>
+.home-page {
+  scroll-behavior: smooth;
+}
+</style>
