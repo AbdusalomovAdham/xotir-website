@@ -8,7 +8,7 @@
     box-sizing: border-box;
     padding: 20px;
     display: flex;
-    flex-direction: row;
+    
     flex-direction: column;
 
     .profile-main-title h3 {
@@ -19,7 +19,7 @@
     }
 
     .profile-main-body {
-        flex-direction: row;
+        
         gap: 17px;
 
         &-left {
@@ -105,7 +105,7 @@
 
                 div {
                     display: flex;
-                    flex-direction: row;
+                    
                     gap: 10px;
 
                     svg {
@@ -120,7 +120,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: row;
+        
         gap: 10px;
         border: none;
         width: 208px;

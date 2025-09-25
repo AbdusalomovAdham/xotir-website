@@ -59,8 +59,8 @@
         </div>
 
         <!-- memory extra -->
-        <div class="memory-extra">
-            <div class="memory-extra-death-about">
+        <div class="memory-extra flex">
+            <div class="memory-extra-death-about flex">
                 <div class="memory-death-date">
                     <h3>Дата смерти:</h3>
                     <span>14.05.2025</span>
@@ -75,16 +75,13 @@
             </div>
         </div>
 
-        <!-- memory socials -->
-
-
         <!-- memory map -->
-        <MemoryMap />
+        <MemoryMap :isView="true" />
 
         <!-- gallery -->
         <div class="memory-gallery">
             <h4>Галерея</h4>
-            <AddMemoryMedia />
+            <ViewMemoryMedia />
         </div>
         <div class="memory-actions flex space-between">
             <div class="memory-action-btns flex">
@@ -107,6 +104,7 @@ import IconEdit from '@/components/icon/EditPen.vue'
 import MemorySocials from '@/components/g/memory-add/MemorySocials.vue'
 import MemoryAvatar from '@/components/g/memory-add/MemoryAvatar.vue'
 import MemoryMap from '@/components/g/memory-add/MemoryMap.vue'
+import ViewMemoryMedia from '@/components/g/ViewMemoryMedia.vue'
 
 import { useFamilyTreeStore } from '@/store/profile/familyaTree'
 const familyTreeStore = useFamilyTreeStore()

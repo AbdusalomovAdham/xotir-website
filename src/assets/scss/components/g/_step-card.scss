@@ -3,11 +3,15 @@
     height: 260px;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
     background: #F8EEE9;
     border-radius: 16px;
     position: relative;
-    justify-content: flex-end;
+
+    @include devices(xs) {
+        width: 400px;
+        max-height: 180px;
+    }
 
     .step-number-wrapper {
         display: flex;
@@ -17,7 +21,6 @@
         width: 240px;
         height: 240px;
         border-radius: 50%;
-        // gap: 25px;
         position: absolute;
         left: 0;
         top: -120px;
@@ -26,6 +29,13 @@
                 transparent 270deg 360deg);
         left: 50%;
         transform: translate(-50%, 0);
+
+        @include devices(xs) {
+            font-size: 18px;
+            width: 120px;
+            top: -60px;
+            height: 120px;
+        }
 
         .step-number-main {
             width: 80px;
@@ -38,8 +48,16 @@
             font-weight: 600;
             color: white;
             border-radius: 50%;
-            border: 1px dashed #663722;
-            margin-top: 40px;
+            border: 2px dashed #663722;
+            margin-top: 30px;
+            margin-bottom: 25px;
+
+            @include devices(xs) {
+                font-size: 12px;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 10px;
+            }
 
             .step-number {
                 width: 60px;
@@ -49,11 +67,26 @@
                 justify-content: center;
                 background-color: #663722;
                 border-radius: 50%;
+
+                @include devices(xs) {
+                    font-size: 12px;
+                    width: 30px;
+                    height: 30px;
+                }
+
             }
         }
 
-        .step-icon{
+        .step-icon {
             margin-top: 50px;
+        }
+
+        svg {
+            @include devices(xs) {
+                font-size: 12px;
+                width: 22px;
+                height: 22px;
+            }
         }
     }
 
@@ -61,17 +94,31 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        position: absolute;
-        top: 132px;
-        left: 50%;
-        transform: translate(-50%, 0);
         width: 360px;
+        margin-top: 90px;
 
-        .card-title h1 {
-            font-weight: 600;
-            font-size: 24px;
-            text-align: center;
-            color: #020A16;
+        @include devices(xs) {
+            margin-top: 30px;
+        }
+
+        .card-title {
+            width: 100%;
+
+            h1 {
+                font-weight: 600;
+                font-size: 24px;
+                text-align: center;
+                color: #020A16;
+
+                @include devices(xs) {
+                    font-size: 18px;
+                    width: 100%;
+                }
+            }
+
+            @include devices(xs) {
+                width: 100%;
+            }
         }
 
         .card-paragraph p {
@@ -79,6 +126,10 @@
             font-weight: 400;
             font-size: 18px;
             color: #020A16;
+
+            @include devices(xs) {
+                font-size: 16px;
+            }
         }
     }
 }

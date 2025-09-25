@@ -1,7 +1,7 @@
 .pricing-card {
     width: 400px;
-    min-height: 628px;
-    
+    height: 628px;
+    height: max-content;
     background: #F8EEE9;
     border-radius: 16px;
     padding: 20px;
@@ -21,7 +21,7 @@
             font-size: 18px;
             font-weight: 400;
             background: #E9CEC2;
-            border-radius: 8px;
+            border-radius: 6px;
             color: #663722;
         }
     }
@@ -68,24 +68,50 @@
         margin-top: 20px;
         width: 400;
 
+        @include devices(xs) {
+            gap: 14px;
+        }
+
         .card-feature {
             display: flex;
-            flex-direction: row;
+
             align-items: center;
             gap: 16px;
 
+            @include devices(xs) {
+                gap: 8px;
+            }
+
             div {
-                width: 22px;
-                min-height: 100%;
-                max-height: 100%;
+                min-width: 23px;
+                min-height: 23px;
+                // min-height: 100%;
+                // max-height: 100%;
                 display: flex;
                 align-items: center;
+
+                @include devices(xs) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                svg {
+                    @include devices(xs) {
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
             }
 
             p {
                 font-weight: 400;
                 font-size: 18px;
                 color: #020A16;
+
+                @include devices(xs) {
+                    font-size: 16px;
+                }
             }
 
         }
@@ -102,6 +128,12 @@
         border: none;
         margin-top: 30px;
         cursor: pointer;
+
+        @include devices(xs) {
+            height: 46px;
+            font-size: 16px;
+            border-radius: 8px;
+        }
     }
 }
 
@@ -111,5 +143,44 @@
     .choose-btn {
         background-color: rgba(102, 55, 34, 1);
         color: white;
+    }
+}
+
+@include devices(xs) {
+    .pricing-card {
+        width: 400px;
+        height: max-content;
+        padding: 10px;
+
+        .card-icon {
+            svg {
+                height: 60px;
+                width: 60px;
+            }
+
+            div {
+                font-size: 14px;
+                padding: 4px 8px;
+            }
+        }
+
+        .pricing-card-title {
+            font-size: 18px;
+            margin: 7px 7px 7px 0;
+        }
+
+        .pricing-card-price {
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+
+            h3 {
+                font-size:24px;
+            }
+
+            span {
+                font-size: 18px;
+                margin: 5px;
+            }
+        }
     }
 }

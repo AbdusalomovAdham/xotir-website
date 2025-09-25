@@ -117,7 +117,7 @@
 
       .memory-location {
         display: grid;
-        flex-direction: row;
+        
         gap: 16px;
         grid-template-columns: repeat(3, 1fr);
       }
@@ -134,6 +134,8 @@
           font-weight: 500;
           font-size: 18px;
           color: #647076;
+          margin-bottom: 100px;
+          display: block;
         }
       }
 
@@ -165,7 +167,7 @@
         display: flex;
 
         .memory-action-btns {
-          flex-direction: row;
+          
           gap: 16px;
 
           .save-btn {

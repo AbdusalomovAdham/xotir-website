@@ -1,11 +1,11 @@
 <template>
-    <div class="pricing">
+    <section class="pricing">
         <div class="pricing-title">
             <h1>Тарифы</h1>
         </div>
 
-        <div class="pricing-cards">
-            <PricingCard :icon="IconUserRounded" :price="'25000'" :title="'Стандарт'" :advised="false"
+        <div class="pricing-cards flex center">
+            <PricingCard :icon="UserRoundedPricing" :price="'25000'" :title="'Стандарт'" :advised="false"
                 :features="userFeatures" :class="{ 'active-pricing': activeCard === 'standard' }"
                 @click="activeCard = 'standard'" />
 
@@ -13,14 +13,14 @@
                 :features="groupFeatures" :class="{ 'active-pricing': activeCard === 'family' }"
                 @click="activeCard = 'family'" />
         </div>
-    </div>
+    </section>
 </template>
 
 
 <script setup>
 import { ref } from 'vue'
 import PricingCard from './PricingCard.vue';
-import IconUserRounded from '@/components/icon/UserRounded.vue'
+import UserRoundedPricing from '@/components/icon/UserRoundedPricing.vue'
 import IconGroupRounded from '@/components/icon/GroupRounded.vue'
 
 const activeCard = ref(null)

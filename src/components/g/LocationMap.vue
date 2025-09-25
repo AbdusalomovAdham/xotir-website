@@ -1,5 +1,5 @@
 <template>
-  <div class="location-map radius-12" id="yandexMap" style="width: 100%; height: 700px;"></div>
+  <div class="location-map" id="yandexMap" :class="{ 'radius-12': isRadius }"></div>
 </template>
 
 <script setup>
@@ -16,6 +16,10 @@ const $props = defineProps({
     type: Array,
     default: () => []
   },
+  isRadius: {
+    type: Boolean,
+    default: false
+  }
 })
 
 let map = null
@@ -65,5 +69,11 @@ watch(
 .location-map {
   width: 100%;
   height: 700px;
+}
+
+@media (max-width: 575px) {
+  .location-map {
+    height: 300px;
+  }
 }
 </style>

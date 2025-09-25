@@ -1,13 +1,10 @@
+@use './mixins/main' as *;
+
 * {
     padding: 0;
     margin: 0;
     font-family: 'Lora', serif;
-    // color: #020A16;
     box-sizing: border-box;
-
-    // &::-webkit-scrollbar {
-    //     display: none;
-    // }
 }
 
 a {
@@ -40,5 +37,20 @@ select {
     }
 }
 
+.container {
+    max-width: 1640px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @include devices(xs) {
+        max-width: 575px;
+        padding: 0 10px;
+    }
+
+    @include devices(sm) {
+        max-width: 768px;
+    }
+}
 
 @import './mixins/main.scss', './components/main.scss', './layouts/main.scss', './pages/main.scss'

@@ -1,6 +1,6 @@
 <template>
     <div class="member-socials flex">
-        <span class="mb-4">Социальные сети:</span>
+        <h3 class="mb-4">Социальные сети:</h3>
         <div class="member-socials-link flex">
             <a href="#" class="pa-8 flex center">
                 <IconTelegram />

@@ -1,14 +1,15 @@
 <template>
-  <div class="home-page">
-    <BannerSection/>
-    <WorkSteps/>
-    <Advantages/>
-    <Pricing/>
-    <UserVideos/>
-    <TrustedBy/>
-    <LocationMap :markers="markers" :center="center"/>
-    <FrequentlyQuestions/>
-  </div>
+  <main class="home-page">
+    <BannerSection />
+    <WorkSteps />
+    <Advantages />
+    <Pricing />
+    <UserVideos />
+    <TrustedBy />
+    <LocationMap :markers="markers" :center="center" :isRadius="false" />
+    <FrequentlyQuestions />
+    <RightBar />
+  </main>
 </template>
 
 <script setup>
@@ -18,9 +19,10 @@ import Advantages from '@/components/g/Advantages.vue'
 import Pricing from '@/components/g/Pricing.vue'
 import UserVideos from '@/components/g/UserVideos.vue'
 import TrustedBy from '@/components/g/TrustedBy.vue'
-import LocationMap from '@/components/g/LocationMap'
-import FrequentlyQuestions from '@/components/g/FrequentlyQuestions'
+import LocationMap from '@/components/g/LocationMap.vue'
+import FrequentlyQuestions from '@/components/g/FrequentlyQuestions.vue'
 import Location from '/public/location-icon.png'
+import RightBar from '@/components/g/RigthBar.vue'
 
 const markers = [
   {

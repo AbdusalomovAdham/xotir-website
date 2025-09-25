@@ -1,4 +1,6 @@
 .user-videos {
+    height: max-content;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,27 +8,57 @@
     width: 100%;
     margin-bottom: 120px;
 
-    .user-videos-title {
-        width: 1360px;
-        margin-bottom: 15px;
+    @include devices(xs) {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
 
-        .title {
+    &_inner {
+        flex-direction: column;
+        height: max-content;
+
+        .user-videos-title {
+            width: 100%;
+            margin-bottom: 15px;
             display: flex;
-            align-items: start;
+            justify-content: center;
 
-            h1 {
-                font-weight: 600;
-                font-size: 36px;
+            .title {
+                width: 1360px;
+                display: flex;
+                align-items: start;
+
+
+                @include devices(xs) {
+                    justify-content: center;
+                }
+
+                h1 {
+                    font-weight: 600;
+                    font-size: 36px;
+
+                    @include devices(xs) {
+                        font-size: 22px;
+                        margin-bottom: 16px;
+                    }
+                }
             }
         }
-    }
 
-    .user-videos-item {
-        div {
+        .user-videos-item {
             display: flex;
             align-items: center;
-            flex-direction: row;
             gap: 20px;
+
+            @include devices(xs) {
+                width: 400px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-items: center;
+            }
+
+            .user-video {}
         }
     }
+
 }

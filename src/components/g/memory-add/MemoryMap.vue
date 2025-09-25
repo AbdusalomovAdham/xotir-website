@@ -1,15 +1,17 @@
 <template>
     <div class="memory-map">
+        <span class="mb-4" style="display: block;" v-if="isView">Адрес смерти на карте:</span>
         <Map :center="center" :markers="markers" style="height: 400px" />
     </div>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref, defineProps } from 'vue';
 import Map from '@/components/g/LocationMap.vue'
 import MapPoint from '/public/map-point.png'
 
 import { useFamilyTreeStore } from '@/store/profile/familyaTree'
+const member = computed(() => useFamilyTreeStore().member)
 
 const cityCoords = {
     "Toshkent": [41.311158, 69.279737],
@@ -35,4 +37,11 @@ const markers = [
         icon: MapPoint,
     }
 ]
+
+const $props = defineProps({
+    isView: {
+        type: Boolean,
+        default: false
+    }
+})
 </script>

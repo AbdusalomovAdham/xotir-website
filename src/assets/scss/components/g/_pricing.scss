@@ -1,7 +1,7 @@
 .pricing {
     width: 100%;
     height: auto;
-    margin-top: 190px;
+    margin-top: 120px;
     margin-bottom: 120px;
     display: flex;
     align-items: center;
@@ -16,10 +16,23 @@
     }
 
     .pricing-cards {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        gap: 20px;
+        gap: 40px;
+    }
+}
+
+
+@include devices(xs) {
+    .pricing {
+        margin-top: 40px;
+        margin-bottom: 0;
+
+        .pricing-title h1 {
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .pricing-cards {
+            flex-direction: column;
+        }
     }
 }

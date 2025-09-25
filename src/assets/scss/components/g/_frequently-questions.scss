@@ -7,17 +7,40 @@
     margin-top: 120px;
     margin-bottom: 120px;
 
-    .frequently-questions-title {
-        font-weight: 600;
-        font-size: 36px;
-        margin-bottom: 20px;
+    @include devices(xs) {
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
 
-    .questions-content {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 16px;
-        width: 1130px;
+    .container {
+        .frequently-questions-main {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .frequently-questions-title {
+                font-weight: 600;
+                font-size: 36px;
+                margin-bottom: 20px;
+
+                @include devices(xs) {
+                    font-size: 22px;
+                }
+            }
+
+            .questions-content {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 16px;
+                width: 1130px;
+
+                @include devices(xs) {
+                    width: 400px;
+                }
+            }
+        }
     }
 }

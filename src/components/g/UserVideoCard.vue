@@ -1,7 +1,7 @@
 <template>
     <div class="user-video">
         <div class="user-video-main">
-            <video ref="myVideo" width="600 " @click="stopVideo">
+            <video ref="myVideo" @click="stopVideo">
                 <source src="@/assets/images/short-video.mp4" type="video/mp4">
             </video>
             <Play @click="playVideo" class="play-btn" v-if="isPlayVideo" />

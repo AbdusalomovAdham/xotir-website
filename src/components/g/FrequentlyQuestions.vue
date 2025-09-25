@@ -1,19 +1,24 @@
 <template>
-    <div class="frequently-questions">
-        <div class="frequently-questions-title">
-            <h4>Часто задаваемые вопросы</h4>
+    <section class="frequently-questions">
+        <div class="container">
+            <div class="frequently-questions-main">
+                <div class="frequently-questions-title">
+                    <h4>Часто задаваемые вопросы</h4>
+                </div>
+                <div class="questions-content">
+                    <Qustion :title="'Требуется ли постоянная плата за поддержку сайта ?'" :answer="asnwer" />
+                    <Qustion :title="'Требуется ли постоянная плата за поддержку сайта ?'" :answer="asnwer" />
+                    <Qustion :title="'Могу ли я подарить цифровые мемориалы Our Tributes родственникам или друзьям?'"
+                        :answer="asnwer" />
+                    <Qustion :title="'Можно ли использовать одну страницу для двух человек, например, для пары?'"
+                        :answer="asnwer" />
+                    <Qustion
+                        :title="'Может ли табличка повредить надгробие? Что делать, если мне придётся её снять позже?'"
+                        :answer="asnwer" />
+                </div>
+            </div>
         </div>
-        <div class="questions-content">
-            <Qustion :title="'Требуется ли постоянная плата за поддержку сайта ?'" :answer="asnwer"/>
-            <Qustion :title="'Требуется ли постоянная плата за поддержку сайта ?'" :answer="asnwer" />
-            <Qustion :title="'Могу ли я подарить цифровые мемориалы Our Tributes родственникам или друзьям?'"
-                :answer="asnwer" />
-            <Qustion :title="'Можно ли использовать одну страницу для двух человек, например, для пары?'"
-                :answer="asnwer" />
-            <Qustion :title="'Может ли табличка повредить надгробие? Что делать, если мне придётся её снять позже?'"
-                :answer="asnwer" />
-        </div>
-    </div>
+    </section>
 </template>
 
 

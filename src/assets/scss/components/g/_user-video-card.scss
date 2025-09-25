@@ -1,31 +1,62 @@
-.user-video .user-video-main {
-    width: 325px;
-    height: 560px;
-    border-radius: 16px;
-    position: relative;
+.user-video {
+    width: 100%;
 
-    video {
+    .user-video-main {
         width: 325px;
         height: 560px;
         border-radius: 16px;
-    }
+        position: relative;
+        position: relative;
+        overflow: hidden;
 
-    .play-btn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        cursor: pointer;
-        z-index: 99;
-    }
+        @include devices(xs) {
+            height: 300px;
+            width: 100%;
+            flex-direction: column;
+        }
 
-    span {
-        position: absolute;
-        color: white;
-        left: 16px;
-        top: 516px;
-        z-index: 999;
-        font-weight: 600;
-        font-size: 22px;
+        video {
+            width: 325px;
+            height: 560px;
+            border-radius: 16px;
+            object-fit: cover;
+
+            @include devices(xs) {
+                height: 300px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        svg {
+            @include devices(xs) {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        span {
+            position: absolute;
+            color: white;
+            left: 16px;
+            top: 516px;
+            z-index: 999;
+            font-weight: 600;
+            font-size: 22px;
+
+            @include devices(xs) {
+                font-size: 14px;
+                top: 275px;
+            }
+        }
     }
 }

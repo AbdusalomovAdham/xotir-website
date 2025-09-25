@@ -1,43 +1,74 @@
 .header {
     width: 100%;
-    height: 112px;
-    margin: 0 auto padding 0;
 
-    // @include devices(xxl) {
-    //     min-width: 1700px;
-    // }
-
-    .header-main {
+    &-inner {
         width: 100%;
-        padding: 16px 140px;
-        display: flex;
-        justify-content: space-between;
-        gap: 168px;
+        position: relative;
+        z-index: 9999;
 
-        .header-left {
+        .header-main {
+            width: 100%;
+            padding: 16px 0px;
             display: flex;
-            flex-direction: row;
-            gap: 60px;
+            align-items: center;
+            justify-content: space-between;
+
+            @include devices(xs) {
+                padding: 10px 0;
+            }
+
+            .header-left {
+                display: flex;
+                gap: 60px;
+
+                @include devices(xs) {
+                    gap: 40px;
+                }
+            }
 
             .header-logo {
                 width: 240px;
-                height: 80px;
+                height: auto;
                 display: flex;
                 align-items: center;
-                flex-direction: row;
-                gap: 12px;
                 cursor: pointer;
+                gap: 12px;
+
+                @include devices(xs) {
+                    gap: 8px;
+                    width: auto;
+                }
 
                 .logo-wrapper {
                     width: 70px;
                     height: 80px;
+
+                    @include devices(xs) {
+                        width: 50px;
+                        height: auto;
+                    }
+
+                    svg {
+                        width: 70px;
+                        height: 80px;
+
+                        @include devices(xs) {
+                            width: 50px;
+                            height: auto;
+                        }
+                    }
                 }
 
                 span {
                     font-weight: 400;
                     font-size: 28px;
-                    font-weight: 120%;
+                    line-height: 120%;
                     color: #020A16;
+                    width: 120px;
+
+                    @include devices(xs) {
+                        font-size: 18px;
+                    }
                 }
 
             }
@@ -47,7 +78,23 @@
             display: flex;
             align-items: center;
             gap: 24px;
-            flex-direction: row;
+
+            div {
+                display: flex;
+
+                @include devices(xs) {
+                    display: none;
+                }
+            }
+
+            .humburger-menu {
+                display: none;
+
+                @include devices(xs) {
+                    display: flex;
+                }
+            }
         }
+
     }
 }

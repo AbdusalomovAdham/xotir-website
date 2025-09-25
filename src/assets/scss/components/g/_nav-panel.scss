@@ -2,10 +2,15 @@
     display: flex;
     align-items: center;
     width: max-content;
+
+    @include devices(xs) {
+        display: none;
+    }
+
     ul {
         display: flex;
         align-items: center;
-        flex-direction: row;
+        
         gap: 32px;
 
         li {

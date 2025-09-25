@@ -1,45 +1,88 @@
 .how-it-work {
-    padding: 120px 340px;
+    margin-bottom: 120px;
+    margin-top: 146px;
 
-    .main-title {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+    .how-it-work-main {
         width: 100%;
-        margin-bottom: 100px;
-        gap: 16px;
-
-        h1 {
-            font-weight: 600;
-            font-size: 36px;
-            line-height: 100%;
-            color: #020A16;
-        }
-
-        span {
-            font-weight: 400;
-            font-size: 20px;
-            color: #020A16;
-        }
-    }
-
-    .work-steps {
         display: flex;
         align-items: center;
-        flex-direction: row;
-        gap: 16px;
-        position: relative;
-    }
+        justify-content: center;
+        flex-direction: column;
 
-    .work-steps:nth-child(2):before {
-        content: "";
-        top: -20px;
-        right: 170px;
-        position: absolute;
-        width: 900px;
-        border: 1px dashed #663722;
-        border-image: repeating-linear-gradient(to right,
-                rgba(102, 55, 34, 1) 0 8px,
-                transparent 8px 12px) 1;
+        .main-title {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 100px;
+            gap: 16px;
+
+            h1 {
+                font-weight: 600;
+                font-size: 36px;
+                line-height: 100%;
+                color: #020A16;
+            }
+
+            span {
+                font-weight: 400;
+                font-size: 20px;
+                color: #020A16;
+            }
+        }
+
+        .work-steps {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            position: relative;
+            width: 100%;
+            justify-content: center;
+
+            @include devices(xs) {
+                gap: 40px;
+            }
+        }
+
+        .work-steps:nth-child(2):before {
+            content: "";
+            top: -20px;
+            position: absolute;
+            width: 900px;
+            border: 1px dashed #663722;
+            border-image: repeating-linear-gradient(to right,
+                    rgba(102, 55, 34, 1) 0 8px,
+                    transparent 8px 12px) 1;
+        }
+    }
+}
+
+@include devices(xs) {
+    .how-it-work {
+        margin-bottom: 0;
+        margin-top: 40px;
+
+        .how-it-work-main .main-title {
+            gap: 4px;
+            margin-bottom: 50px;
+
+            h1 {
+                font-size: 22px;
+            }
+
+            span {
+                font-size: 16px;
+            }
+        }
+
+        .work-steps {
+            gap: 20px;
+            flex-direction: column;
+        }
+
+        .work-steps:nth-child(2):before {
+            display: none;
+        }
+
     }
 }

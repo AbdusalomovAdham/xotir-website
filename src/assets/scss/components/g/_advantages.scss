@@ -3,26 +3,62 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding: 0px 280px;
-    height: 670px;
+    min-height: 670px;
+    height: max-content;
     position: relative;
+    width: 100%;
+    background: url('@/assets/images/wave-shape.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
-    svg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
+    @include devices(xs) {
+        background: #F3F6FA;
+        padding: 20px 0 40px 0;
+        margin-top: 40px;
     }
 
-    .advantage-title h1 {
-        font-weight: 600;
-        color: #020A16;
-        font-size: 36px;
-        margin-bottom: 14px;
-    }
-
-    .advantages-cards {
+    .advantages-main {
+        width: 100%;
+        min-height: 670px;
         display: flex;
-        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        svg {
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            bottom: 0;
+        }
+
+
+        .advantage-title h1 {
+            font-weight: 600;
+            color: #020A16;
+            font-size: 36px;
+            margin-bottom: 14px;
+
+            @include devices(xs) {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .advantages-cards {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: center;
+
+            @include devices(xs) {
+                font-size: 18px;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+            }
+        }
     }
 }

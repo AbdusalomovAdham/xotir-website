@@ -1,42 +1,75 @@
 .question {
-    display: flex;
-    flex-direction: row;
-    width: calc(100% - 16px);
+    width: 1130px;
     border: 1px solid #E2E8EF;
     border-radius: 16px;
-    height: 60px;
     overflow: hidden;
-    padding: 16px;
-    transition: all 0.4s ease;
-    cursor: pointer;
+    transition: all 1s ease;
 
-    .queastion-title {
+    @include devices(xs) {
+        width: 100%;
+    }
+
+
+    .question-header {
         display: flex;
-        align-items: start;
-        flex-direction: column;
-        margin-bottom: 16px;
         width: 1130px;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 16px;
+
+        @include devices(xs) {
+            width: 100%;
+        }
 
         h3 {
             font-weight: 500;
             font-size: 22px;
-            margin-bottom: 20px;
+            font-weight: 500;
+            color: rgba(2, 10, 22, 1);
+            margin: 0;
         }
 
-        p {
-            font-weight: 400;
-            font-size: 18px;
-            letter-spacing: 0%;
-            width: 1054px;
-            text-align: left;
+        .icon {
+            display: flex;
+
+            svg {
+                @include devices(xs) {
+                    height: 20px;
+                    width: 20px;
+                    margin-left: 2px;
+                }
+            }
         }
     }
-}
 
-.question.active-queation {
-    height: 190px;
-    // height: max-content;
-    border: 1px solid #C78F76;
-    background: #F8EEE9;
-    transition: all 0.4s ease;
+    .question-answer {
+        max-height: 0;
+        overflow-y: hidden;
+        transition: max-height 0.4s ease, padding 0.6s ease;
+        padding: 0 16px;
+
+        p {
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 400;
+            color: rgba(2, 10, 22, 1);
+        }
+    }
+
+    &.active {
+        border-color: #C78F76;
+        background: #F8EEE9;
+
+        .question-answer {
+            max-height: 400px;
+            padding: 16px;
+            padding-top: 0px;
+
+
+            @include devices(xs) {
+                overflow-y: auto;
+            }
+        }
+    }
 }

@@ -1,8 +1,9 @@
 .member-socials {
     flex-direction: column;
+    gap: 4px;
 
     &-link {
-        flex-direction: row;
+        
         gap: 6px;
 
         a {

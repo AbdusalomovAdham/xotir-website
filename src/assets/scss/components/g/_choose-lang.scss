@@ -53,3 +53,30 @@
         }
     }
 }
+
+@include devices(xs) {
+    .language-select {
+        width: max-content;
+
+        .selected {
+            font-size: 16px;
+            padding: 4px 6px;
+            height: 38px;
+            width: 130px;
+
+            .flag {
+                width: 16px;
+                height: 12px;
+            }
+
+            svg {
+                height: 14px;
+                width: 14px;
+            }
+        }
+
+        .options {
+            font-size: 14px;
+        }
+    }
+}
