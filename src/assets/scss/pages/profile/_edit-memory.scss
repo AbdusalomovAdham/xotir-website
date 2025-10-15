@@ -1,0 +1,220 @@
+.edit-memory {
+  flex: 1;
+  background-color: #F3F6FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px 0;
+
+  &-main {
+    .edit-memory-header {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+
+      h3 {
+        font-weight: 600;
+        font-size: 24px;
+        color: #020A16;
+        text-align: start;
+      }
+
+      svg {
+        cursor: pointer;
+      }
+    }
+
+    .edit-memory-content {
+      width: 1130px;
+      height: max-content;
+      min-height: 762px;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .memory-top {
+        display: flex;
+        gap: 16px;
+
+        .edit-memory-avatar {
+          width: 168px;
+          height: 168px;
+          position: relative;
+
+          .user-circle {
+            width: 100%;
+            height: 100%;
+          }
+
+          .choose-avatar {
+            position: absolute;
+            top: 137px;
+            left: 64px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: white;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            background: linear-gradient(#fff, #fff) padding-box,
+            linear-gradient(99.29deg, #C78F76 35.95%, #92573D 64.05%) border-box;
+
+            input {
+              position: absolute;
+              opacity: 0;
+              height: 40px;
+              width: 40px;
+              cursor: pointer;
+              color: #020A16;
+            }
+          }
+
+          img {
+            width: 168px;
+            height: 168px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+
+        .edit-memory-info {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+
+          .edit-memory-top {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            align-items: center;
+          }
+
+          .edit-memory-bottom {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            align-items: center;
+          }
+        }
+      }
+
+      .edit-memory-bio {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+
+        label {
+          font-weight: 500;
+          font-size: 18px;
+          color: #020A16;
+        }
+
+        textarea {
+          min-height: 104px;
+          border: 1px solid rgba(223, 228, 234, 1);
+          color: #020A16;
+          border-radius: 8px;
+          padding: 13px 14px;
+          resize: vertical;
+          outline: none;
+          font-weight: 500;
+          font-size: 20px;
+          box-sizing: border-box;
+        }
+      }
+
+      .edit-memory-location {
+        display: grid;
+
+        gap: 16px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .edit-memory-extra {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 4px;
+      }
+
+      .edit-memory-map {
+        span {
+          font-weight: 500;
+          font-size: 18px;
+          color: #647076;
+          margin-bottom: 100px;
+          display: block;
+        }
+      }
+
+      .edit-memory-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        h4 {
+          font-weight: 600;
+          font-size: 24px;
+          color: #663722;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 980px;
+            background: #DFE4EA;
+            bottom: 50%;
+            right: 0;
+          }
+        }
+
+      }
+
+      .memory-actions {
+        display: flex;
+
+        .memory-action-btns {
+
+          gap: 16px;
+
+          .save-btn {
+            border: none;
+            border-radius: 8px;
+            height: 52px;
+            color: white;
+            font-weight: 500;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 137px;
+          }
+
+          .preview-btn {
+            width: 315px;
+            background: rgba(244, 237, 233, 1);
+            font-weight: 500;
+            font-size: 20px;
+            color: rgba(102, 55, 34, 1);
+          }
+        }
+
+        .memory-status {
+          width: 277px;
+          height: 52px;
+          padding: 16px;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}

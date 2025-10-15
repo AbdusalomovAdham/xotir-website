@@ -14,9 +14,12 @@
 import IconLeftBack from '@/components/icon/LeftBack.vue'
 import router from '@/routes'
 import ViewMemoryContent from "@/components/g/ViewMemory.vue";
+import { useFamilyTreeStore } from '@/store/profile/familyaTree'
 
+const familyTreeStore = useFamilyTreeStore()
 const returnBack = () => {
     router.push('/profile/family-tree')
+    familyTreeStore.member = {}
 }
 
 

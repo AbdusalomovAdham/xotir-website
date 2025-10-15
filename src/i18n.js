@@ -15,7 +15,7 @@ const messages = {
             create: 'Создать QR-код'
         }
     },
-    en: {
+    oz: {
         nav: {
             how: "How it works?",
             benefits: "Benefits",

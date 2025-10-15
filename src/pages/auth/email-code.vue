@@ -3,7 +3,7 @@
         <div class="otp-container-wrapper flex radius-12">
             <div class="otp-container-title flex items-center space-between">
                 <h2 class="mb-6">Введите код</h2>
-                <IconClose @click="close"/>
+                <IconClose @click="close" />
             </div>
             <p class="mb-16">Пароль был отправлен на {{ email }}, пожалуйста, введите пароль.</p>
             <div class="otp-inputs flex mb-16">
@@ -22,9 +22,14 @@
 <script setup>
 import router from '@/routes';
 import IconClose from '@/components/icon/Close.vue'
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
+import { useCheckCode } from '@/store/auth/email-code'
 
-const email = "tziyodullayev@gmail.com"
+import { useForgotPsw } from '@/store/auth/forgot-psw'
+const forgotPswStore = useForgotPsw()
+
+const checkCodeStore = useCheckCode()
+const email = computed(() => forgotPswStore.userEmail)
 const otp = ref(Array(6).fill(""));
 
 const focusNext = (e, index) => {
@@ -52,11 +57,25 @@ onMounted(() => {
     }, 1000)
 })
 
-const continueFunc = () => {
-    router.push('/auth/reset-password')
+const continueFunc = async () => {
+    try {
+        const code = otp.value.join("")
+        await checkCodeStore.checkCode(code)
+        router.push('/auth/reset-password')
+    } catch (e) {
+        console.log(e)
+    }
 }
 
 const close = () => {
     router.push('/auth/sign-in')
 }
 </script>
+
+
+<style scoped>
+.otp-container {
+    /* position: relative; */
+    z-index: 100000;
+}
+</style>

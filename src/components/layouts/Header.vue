@@ -45,6 +45,5 @@ const goTO = () => {
 
 const openMenu = () => {
     menuBarStore().isClose = true
-    // alert('asdf');
 }
 </script>

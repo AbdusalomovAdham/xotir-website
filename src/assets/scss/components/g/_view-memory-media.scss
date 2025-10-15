@@ -1,7 +1,7 @@
 .view-gallery-media {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
 
     .view-image-list,
     .view-video-list,
@@ -9,7 +9,7 @@
         width: 353px;
         min-height: 52px;
         height: max-content;
-        background: #F8EEE9;
+        border-radius: 12px;
     }
 
     .image-view,
@@ -21,8 +21,13 @@
         border-radius: 12px;
         gap: 6px;
         position: relative;
-        margin-bottom: 16px;
         background-color: #F8EEE9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #663722;
+        font-weight: 600;
+        font-size: 18px;
     }
 
     .view-galley-images,
@@ -32,7 +37,6 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
         height: max-content;
-        // min-height: 168px;
         align-items: center;
 
         .image-item {
@@ -61,45 +65,43 @@
         }
     }
 
-    .video-list {
-        .video-item {
+    .video-item {
+        width: 169px;
+        height: 168px;
+        position: relative;
+
+        video {
             width: 169px;
             height: 168px;
-            position: relative;
-
-            video {
-                width: 169px;
-                height: 168px;
-                object-fit: cover;
-                border-radius: 12px;
-            }
-
-            button {
-                position: absolute;
-                top: 134px;
-                left: 134px;
-                background: rgba(0, 0, 0, 0.5);
-                color: white;
-                border: none;
-                border-radius: 50%;
-                width: 24px;
-                height: 24px;
-                cursor: pointer;
-            }
-
-            svg {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-
+            object-fit: cover;
+            border-radius: 12px;
         }
+
+        button {
+            position: absolute;
+            top: 134px;
+            left: 134px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
     }
 
-    .audio-list {
+    .view-audio-list {
         flex-direction: column;
-
+    
         .gallery-audios {
             display: flex;
             flex-direction: column;
@@ -115,7 +117,6 @@
                 border-radius: 12px;
                 background-color: rgba(255, 255, 255, 1);
                 border: 1px solid rgba(223, 228, 234, 1);
-
 
                 .audio-box {
                     display: flex;

@@ -1,29 +1,29 @@
 <template>
   <div class="add-memory-content">
     <div class="memory-top">
-      <MemoryAvatar />
-      <MemoryInfo />
+      <MemoryAvatar/>
+      <MemoryInfo/>
     </div>
 
     <!-- memory bio -->
-    <MemoryBio />
+    <MemoryBio/>
 
     <!-- location -->
-    <MemoryLocation />
+    <MemoryLocation/>
 
     <!-- memory extra -->
-    <MemoryExtra />
+    <MemoryExtra/>
 
     <!-- memory socials -->
     <!-- <MemorySocials /> -->
 
     <!-- memory map -->
-    <MemoryMap />
+    <MemoryMap/>
 
     <!-- gallery -->
     <div class="memory-gallery">
       <h4>Галерея</h4>
-      <AddMemoryMedia />
+      <AddMemoryMedia/>
     </div>
     <div class="memory-actions flex space-between">
       <div class="memory-action-btns flex">
@@ -32,14 +32,14 @@
       </div>
 
       <div class="memory-status radius-12 flex center">
-        <ToggleSwitch />
+        <ToggleSwitch/>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed, reactive, ref } from 'vue'
+import {computed, reactive, ref, onMounted} from 'vue'
 
 import AddMemoryMedia from '@/components/g/AddMemoryMedia.vue'
 import router from "@/routes";
@@ -51,12 +51,26 @@ import MemoryInfo from '@/components/g/memory-add/MemoryInfo.vue'
 import MemoryBio from '@/components/g/memory-add/MemoryBio.vue'
 import MemoryLocation from '@/components/g/memory-add/MemoryLocation.vue'
 import MemoryExtra from '@/components/g/memory-add/MemoryExtra.vue'
-import MemorySocials from '@/components/g/memory-add/MemorySocials.vue'
+import MemorySocials from '@/components/g/edit-memory/MemorySocials.vue'
 import MemoryMap from '@/components/g/memory-add/MemoryMap.vue'
 
-import { useFamilyTreeStore } from '@/store/profile/familyaTree'
+import {useFamilyTreeStore} from '@/store/profile/familyaTree'
+import {useAddMemory} from '@/store/addMemory/add-memory';
+
+const addMemoryStore = useAddMemory()
 const familyTreeStore = useFamilyTreeStore()
-const saveMemory = () => {
-  router.push('/profile/family-tree')
+const saveMemory = async () => {
+  try {
+    if (!addMemoryStore.validateForm()) return
+    await addMemoryStore.createMemory()
+    await familyTreeStore.memoryMembers()
+    router.push('/profile/family-tree')
+  } catch (e) {
+    console.error(e)
+  }
 }
+
+onMounted(() => {
+  familyTreeStore.getMemberList()
+})
 </script>

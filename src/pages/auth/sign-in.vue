@@ -14,6 +14,7 @@
                 <div class="sign-in-forgot-password flex content-end">
                     <router-link to="/auth/forgot-password">Забыли пароль</router-link>
                 </div>
+                <span v-if="errorMsg" style="color: red;">{{ errorMsg }}</span>
                 <div class="sign-in-btns flex ">
                     <Button class="sign-in-btn flex center" @click="signIn">Войти</Button>
                     <Button class="sign-up-btn flex center" @click="signUp">
@@ -44,7 +45,9 @@ import IconLock from '@/components/icon/Lock.vue'
 import Google from '@/assets/images/google.png'
 import Apple from '@/assets/images/apple.png'
 import router from '@/routes'
+import { useSignIn } from '@/store/auth/sign-in'
 
+const signInStore = useSignIn()
 const email = ref('')
 const password = ref('')
 
@@ -53,11 +56,14 @@ const passwordError = ref(false)
 
 const isFill = ref(false)
 
+
 const signUp = () => {
     router.push('/auth/sign-up')
 }
 
-const signIn = () => {
+const errorMsg = ref("")
+
+const signIn = async () => {
     emailError.value = !email.value.trim()
     passwordError.value = !password.value.trim()
 
@@ -65,10 +71,18 @@ const signIn = () => {
         setTimeout(() => {
             emailError.value = false
             passwordError.value = false
-        }, 3000);
+        }, 3000)
         return
     }
 
-    router.push('/profile')
+    try {
+        await signInStore.signIn(email.value, password.value)
+        router.push('/profile')
+    } catch (e) {
+        errorMsg.value = e.message || "Ошибка при входе"
+        setTimeout(() => {
+            errorMsg.value = ""
+        }, 3000)
+    }
 }
-</script>ƒ
+</script>

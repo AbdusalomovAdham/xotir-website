@@ -21,15 +21,18 @@ import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useLanguageStore } from '@/store/composables/useLanguage'
 import IconDown from '@/components/icon/Down.vue'
 import IconUp from '@/components/icon/Up.vue'
+import { useProfileStore } from '@/store/profile/profile'
+import { useSignUp } from '@/store/auth/sign-up'
 
+const profileStore = useProfileStore()
 const langStore = useLanguageStore()
 const selectRef = ref(null)
 const isOpen = ref(false)
-
+const signUpStore = useSignUp()
 const options = ref([
     { value: 'ru', label: 'Русский', flag: 'https://flagcdn.com/w20/ru.png' },
     { value: 'uz', label: "Oʻzbekcha", flag: 'https://flagcdn.com/w20/uz.png' },
-    { value: 'en', label: 'English', flag: 'https://flagcdn.com/w20/gb.png' }
+    { value: 'oz', label: 'Ўзбекча', flag: 'https://flagcdn.com/w20/uz.png' }
 ])
 
 const selectedOption = computed(() =>
@@ -37,7 +40,9 @@ const selectedOption = computed(() =>
 )
 
 const toggleDropdown = () => { isOpen.value = !isOpen.value }
-const selectOption = (option) => {
+const selectOption = async (option) => {
+    await profileStore.getUser(option.value)
+    await signUpStore.getRegions(option.value)
     langStore.setLang(option.value)
     isOpen.value = false
 }
@@ -51,6 +56,7 @@ const handleClickOutside = (e) => {
 onMounted(() => {
     document.addEventListener('click', handleClickOutside)
 })
+
 onBeforeUnmount(() => {
     document.removeEventListener('click', handleClickOutside)
 })

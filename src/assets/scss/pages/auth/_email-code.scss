@@ -11,7 +11,8 @@
         flex-direction: column;
         padding: 20px;
         width: 555px;
-        height: 298px;
+        min-height: 298px;
+        height: max-content;
         background: #fff;
         position: absolute;
         top: 232px;

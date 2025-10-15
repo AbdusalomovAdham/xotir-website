@@ -40,49 +40,23 @@
             .memory-top {
                 display: flex;
                 gap: 16px;
-
-                .memory-avatar {
+                
+                img {
                     width: 168px;
                     height: 168px;
-                    position: relative;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
 
-                    .choose-avatar {
-                        position: absolute;
-                        top: 137px;
-                        left: 64px;
-                        width: 40px;
-                        height: 40px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        overflow: hidden;
-                        background: white;
-                        border-radius: 50%;
-                        border: 1px solid transparent;
-                        background: linear-gradient(#fff, #fff) padding-box,
-                            linear-gradient(99.29deg, #C78F76 35.95%, #92573D 64.05%) border-box;
-
-                        input {
-                            position: absolute;
-                            opacity: 0;
-                            height: 40px;
-                            width: 40px;
-                            cursor: pointer;
-                            color: #020A16;
-                        }
-                    }
-
-                    img {
-                        width: 168px;
-                        height: 168px;
-                        border-radius: 50%;
-                        object-fit: cover;
-                    }
+                svg {
+                    width: 168px;
+                    height: 168px;
+                    border-radius: 50%;
                 }
 
                 .memory-info {
-                    
-                    width: 100%;
+
+                    width: 83%;
                     justify-content: space-between;
                     gap: 16px 19px;
 
@@ -241,7 +215,6 @@
                 }
 
                 &-death-about {
-                    
                     gap: 255px;
                 }
             }
@@ -282,10 +255,9 @@
                 display: flex;
 
                 .memory-action-btns {
-                    
                     gap: 16px;
 
-                    .save-btn {
+                    .edit-btn {
                         border: none;
                         border-radius: 8px;
                         width: 137px;
@@ -295,6 +267,8 @@
                         font-size: 20px;
                         cursor: pointer;
                         transition: 0.2s;
+                        width: 208px;
+                        gap: 10px;
                     }
 
                     .preview-btn {

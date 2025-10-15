@@ -4,5 +4,4 @@
         <circle cx="29.0003" cy="21" r="5.33333" fill="#C78F76" />
         <ellipse cx="29.0003" cy="35.6667" rx="9.33333" ry="5.33333" fill="#C78F76" />
     </svg>
-
 </template>

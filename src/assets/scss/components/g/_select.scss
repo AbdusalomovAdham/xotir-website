@@ -24,6 +24,7 @@
             transition: border 0.3s ease, box-shadow 0.3s ease;
             height: 52px;
             color: #8F9BA1;
+            flex-direction: row;
 
             &.has-value {
                 color: #020A16;
